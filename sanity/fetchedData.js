@@ -245,7 +245,7 @@ export async function getEmailData() {
 
 export async function getPaidAds() {
   const result = await client.fetch(
-    groq`*[_type == "emailMarketing"]{
+    groq`*[_type == "paidads"]{
          _id,
          _createdAt,
          metaTitle,
@@ -303,6 +303,20 @@ export async function getTestimonials() {
          clientName,
          clientPosition,
          review,
+        }`,
+    {},
+    defaultFetchOptions
+  );
+  return result;
+}
+
+export async function getFaqData() {
+  const result = await client.fetch(
+    groq`*[_type == "faqs"]{
+         _id,
+         _createdAt,
+         faqQuestion,
+         answer,
         }`,
     {},
     defaultFetchOptions
