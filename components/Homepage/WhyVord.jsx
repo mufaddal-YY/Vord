@@ -4,10 +4,12 @@ import Image from "next/image";
 
 const WhyVord = ({ homeData }) => {
   return (
-    <main className="bg-white">
-      <section className="container py-[50px]">
+    <main className="bg-white bg-dot-black/[0.1]">
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
+      <section className="container pb-[50px]">
         {homeData.map((item, idx) => (
-          <article className="bg-white rounded-[25px] lg:p-6" key={idx}>
+          <article className="rounded-[25px] lg:p-6" key={idx}>
             <div className="border-b-2 text-center space-y-2 p-2">
               <h4 className="text-3xl text-primary font-semibold">
                 {item?.whyChooseTitle}
@@ -25,7 +27,12 @@ const WhyVord = ({ homeData }) => {
                         <div className="mt-4 p-4 w-full bg-white rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between">
                           <div>
                             <div className="w-[40px] h-[40px] rounded-md bg-primary p-2 flex items-center justify-center mx-auto lg:mx-0 mb-2">
-                              <Image src={data.icon} width={30} height={30} alt={data.alt} />
+                              <Image
+                                src={data.icon}
+                                width={30}
+                                height={30}
+                                alt={data.alt}
+                              />
                             </div>
                             <h4 className="text-md font-medium pb-2 border-b border-primary">
                               {data.title}

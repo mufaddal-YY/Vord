@@ -4,7 +4,8 @@ import PortableTextComponent from "../ui/PortableTextComponent";
 
 const PoweredBySection = ({ homeData }) => {
   return (
-    <main className="bg-white">
+    <main className="bg-white bg-dot-black/[0.1]">
+       <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <section className="container py-[50px]">
         {homeData.map((item, idx) => (
           <article className="lg:p-6" key={idx}>

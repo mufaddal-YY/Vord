@@ -7,6 +7,7 @@ import ProgressBars from "@/components/Nav/ProgressBar";
 import Script from "next/script";
 import { Toaster } from "sonner";
 import Header from "@/components/Nav/Header";
+import Footer from "@/components/Nav/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({ children }) {
           {children}
           <Toaster closeButton position="top-right" richColors />
         </main>
-        {/* <Footer /> */}
+        <Footer />
         <Suspense>
           <ProgressBars />
         </Suspense>
