@@ -9,10 +9,9 @@ const Services = ({ homeData }) => {
         {homeData.map((item, idx) => (
           <article className="lg:p-6" key={idx}>
             <div className="text-center space-y-2 p-2">
-              <h4 className="text-3xl text-primary font-semibold">
-                {item.problemHeadline}
+              <h4 className="w-full lg:w-3/4 flex mx-auto text-3xl text-primary font-semibold">
+                {item.servicesHeadline}
               </h4>
-              <h6 className="text-lg font-medium">{item.problemSubHeadline}</h6>
             </div>
             <div className="py-6">
               <div className="container mx-auto px-4">

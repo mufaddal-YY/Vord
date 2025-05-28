@@ -24,11 +24,11 @@ const PoweredBySection = ({ homeData }) => {
                 />
               </div>
               <div className="w-full lg:w-1/2">
-                <div className="text-lg lg:text-2xl mb-4">
+                <div className="text-lg lg:text-2xl my-4">
                   <PortableTextComponent content={item?.content} />
                 </div>
-                <div className="my-6 p-2 lg:p-6 bg-primary rounded-xl">
-                  <h4 className="text-white text-xl p-4 border-l-2 border-white">
+                <div className="my-6 p-4 lg:p-8 bg-primary rounded-xl">
+                  <h4 className="text-white text-xl p-8 lg:border-l-2 border-white">
                     {item?.poweredByBlockContent}
                   </h4>
                 </div>

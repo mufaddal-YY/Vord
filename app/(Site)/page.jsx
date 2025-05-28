@@ -5,6 +5,7 @@ import PoweredBySection from "@/components/Homepage/PoweredBySection";
 import RevenueEngine from "@/components/Homepage/RevenueEngine";
 import Services from "@/components/Homepage/Services";
 import Statistics from "@/components/Homepage/Statistics";
+import WhyVord from "@/components/Homepage/WhyVord";
 import {
   getClientele,
   getHomeData,
@@ -33,6 +34,7 @@ export default async function Home() {
       <Statistics homeData={homeData} />
       <Insights homeData={homeData} />
       <PoweredBySection homeData={homeData} />
+      <WhyVord homeData={homeData} />
     </main>
   );
 }
