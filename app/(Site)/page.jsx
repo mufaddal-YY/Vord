@@ -30,6 +30,7 @@ export default async function Home() {
   return (
     <main className="mt-12">
       <HeroBanner
+        homeData={homeData}
         clienteleData={clienteleData}
         testimonialsData={testimonialsData}
       />

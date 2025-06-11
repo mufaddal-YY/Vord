@@ -110,8 +110,10 @@ export async function getLinkedinData() {
          metaKeywords,
          headline,
          whyLinkedin,
+         "whyImage": whyImage.asset->url,
          content,
          serviceHeadline,
+         "serviceImage": serviceImage.asset->url,
          services[]{
          serviceTitle,
          servicedescription,
@@ -320,6 +322,53 @@ export async function getFaqData() {
         }`,
     {},
     defaultFetchOptions
+  );
+  return result;
+}
+
+export async function getBlogData() {
+  const result = await client.fetch(
+    groq`*[_type == "blog"] | order(publishedAt desc){
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      publishedAt,
+      metaTitle,
+      metaDescription,
+      metaKeywords,
+      excerpt,
+      "mainImage": mainImage.asset->url,
+      author,
+    }`,
+    {},
+    defaultFetchOptions
+  );
+  return result;
+}
+
+export async function getBlogDetailData(slug) {
+  const result = await client.fetch(
+    groq`*[_type == "blogs" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      publishedAt,
+      metaTitle,
+      metaDescription,
+      metaKeywords,
+      excerpt,
+      "mainImage": mainImage.asset->url,
+      author,
+      content[]{
+        _type == "image" => {
+          "asset": asset->url
+        }
+      }
+    }`,
+    {},
+    { slug, defaultFetchOptions }
   );
   return result;
 }

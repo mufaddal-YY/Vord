@@ -7,42 +7,14 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { Button } from "../ui/button";
 import MobileNav from "./MobileNav";
-
-const servicesData = [
-  {
-    name: "Linkedin Marketing & Optimization",
-    link: "/linkedin-marketing-optimization",
-  },
-  {
-    name: "Search Engine Optimization (SEO)",
-    link: "/search-engine-optimization",
-  },
-  {
-    name: "B2B Email Marketing",
-    link: "/b2b-email-marketing",
-  },
-  {
-    name: "Content Strategy & Creation",
-    link: "/content-strategy-creation",
-  },
-  {
-    name: "Paid Ads",
-    link: "/paid-ads",
-  },
-];
+import { servicesData } from "@/lib/constants";
 
 const Header = () => {
   return (

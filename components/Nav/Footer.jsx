@@ -4,39 +4,18 @@ import Image from "next/image";
 import Logo from "@/public/logo_b.png";
 import { MdEmail, MdCall } from "react-icons/md";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { servicesData } from "@/lib/constants";
 
 const Footer = () => {
-  const servicesData = [
-    {
-      name: "Linkedin Marketing & Optimization",
-      link: "/linkedin-marketing-optimization",
-    },
-    {
-      name: "Search Engine Optimization (SEO)",
-      link: "/search-engine-optimization",
-    },
-    {
-      name: "B2B Email Marketing",
-      link: "/b2b-email-marketing",
-    },
-    {
-      name: "Content Strategy & Creation",
-      link: "/content-strategy-creation",
-    },
-    {
-      name: "Paid Ads",
-      link: "/paid-ads",
-    },
-  ];
 
   return (
     <section className="py-4 bg-white">
       <div className="container">
-        <div className="flex flex-wrap flex-col justify-between md:flex-row lg:flex-row p-4">
-          <div className=" flex flex-col gap-2 mb-4 w-full md:w-1/2 lg:w-1/4 p-2">
+        <div className="flex flex-wrap flex-col justify-between md:flex-row lg:flex-row p-2">
+          <div className=" flex flex-col gap-2 mb-4 w-full md:w-1/2 lg:w-1/4">
             <div className="">
               <Link href={"/"} className="flex items-center">
-                <Image width={150} height={50} src={Logo} alt="footer logo" />
+                <Image width={100} height={50} src={Logo} alt="footer logo" />
               </Link>
             </div>
             <div className="py-2">

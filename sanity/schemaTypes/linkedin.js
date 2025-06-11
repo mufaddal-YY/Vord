@@ -40,9 +40,25 @@ export default {
       ],
     },
     {
+      name: "whyImage",
+      title: "Why Linkedin Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
       name: "serviceHeadline",
       title: "Service Headline",
       type: "string",
+    },
+    {
+      name: "serviceImage",
+      title: "Service Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
     },
     {
       name: "services",

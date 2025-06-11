@@ -7,53 +7,21 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
-import { MdCall } from "react-icons/md";
 import Link from "next/link";
 import { AlignJustify } from "lucide-react";
-import Image from "next/image";
-import Logo from "@/public/logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-const servicesData = [
-  {
-    name: "Linkedin Marketing & Optimization",
-    link: "/linkedin-marketing-optimization",
-  },
-  {
-    name: "Search Engine Optimization (SEO)",
-    link: "/search-engine-optimization",
-  },
-  {
-    name: "B2B Email Marketing",
-    link: "/b2b-email-marketing",
-  },
-  {
-    name: "Content Strategy & Creation",
-    link: "/content-strategy-creation",
-  },
-  {
-    name: "Paid Ads",
-    link: "/paid-ads",
-  },
-];
+import { servicesData } from "@/lib/constants";
 
 const MobileNav = () => {
   return (
-    <Sheet >
+    <Sheet>
       <SheetTrigger asChild>
         <AlignJustify className="text-white cursor-pointer" />
       </SheetTrigger>

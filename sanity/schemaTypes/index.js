@@ -8,7 +8,8 @@ import linkedin from "./linkedin";
 import paidads from "./paidads";
 import seo from "./seo";
 import testimonials from "./testimonials";
+import blogs from "./blogs";
 
 export const schema = {
-  types: [home, linkedin, seo, emailMarketing, contentStrategy, paidads, about, clientele, testimonials, faqs],
+  types: [home, linkedin, seo, emailMarketing, contentStrategy, paidads, about, clientele, testimonials, faqs, blogs],
 };
