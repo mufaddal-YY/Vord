@@ -108,6 +108,7 @@ module.exports = {
     },
   },
   plugins: [
+    [require('tailwind-scrollbar-hide')],
     addVariablesForColors,
     function addVariablesForColors({ addBase, theme }) {
       let allColors = flattenColorPalette(theme("colors"));

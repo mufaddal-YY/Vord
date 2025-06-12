@@ -5,7 +5,6 @@ import SeoServices from "@/components/Seo/SeoServices";
 import VordAdvantage from "@/components/Seo/VordAdvantage";
 import WhySeo from "@/components/Seo/WhySeo";
 import { getSeoData } from "@/sanity/fetchedData";
-import seo from "@/sanity/schemaTypes/seo";
 
 export default async function SearchEngineOptimization() {
   const seoData = await getSeoData();

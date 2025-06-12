@@ -28,11 +28,27 @@ export default {
       title: "Description",
       type: "string",
     },
+    {
+      name: "headImage",
+      title: "Header Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
 
     {
       name: "whyEmail",
       title: "Why Email",
       type: "string",
+    },
+    {
+      name: "whyEmailImage",
+      title: "Why Email Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
     },
     {
       name: "emailDescription",
@@ -57,9 +73,25 @@ export default {
               title: "Description",
               type: "string",
             },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
+            },
           ],
         },
       ],
+    },
+    {
+      name: "campaignImage",
+      title: "Campaign Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
     },
     {
       name: "campaignTypes",
@@ -88,6 +120,14 @@ export default {
               name: "description",
               title: "Description",
               type: "string",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
             },
           ],
         },
