@@ -12,12 +12,12 @@ const Cta = ({
 }) => {
   return (
     <main className="bg-white p-4">
-      <section className="container w-full lg:w-3/4 bg-primary py-[30px] rounded-[30px] bg-[url('/ctaBg.png')] bg-contain bg-no-repeat bg-center">
+      <section className="container w-full lg:w-full bg-primary py-[70px] rounded-[30px] bg-[url('/ctaBg.png')] bg-contain bg-no-repeat bg-center">
         <article className="flex flex-col items-center ">
-          <h4 className="w-full py-4 lg:w-1/2 text-2xl lg:text-3xl text-white font-semibold text-center">
+          <h4 className="w-full py-4 lg:w-4/6 text-3xl lg:text-5xl text-white font-bold leading-snug text-center">
             {ctaTitle}
           </h4>
-          <p className="w-full py-4 lg:w-3/4 text-md lg:text-lg text-white text-center font-regular">
+          <p className="w-full py-4 lg:w-3/4 text-md lg:text-lg leading-snug text-white text-center font-regular">
             {ctaDescription}
           </p>
           <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-6">

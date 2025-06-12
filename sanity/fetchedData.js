@@ -146,9 +146,19 @@ export async function getSeoData() {
          metaKeywords,
          headline,
          whySeo,
+         "whySeoImage": whySeoImage.asset->url,
          content,
+         seoApproach[]{
+         title,
+         description,
+         },
          searchIntent,
          searchContent,
+         seoSearchIntent[]{
+         title,
+         description,
+         },
+         searchIntentFooter,
          serviceHeadline,
          services[]{
          serviceTitle,

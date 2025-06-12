@@ -42,17 +42,23 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-106">
                 <DropdownMenuGroup>
-                  {servicesData.map((items) => (
-                    <DropdownMenuSub key={items.name}>
-                      <Link
-                        className="cursor-pointer"
-                        href={`/services/${items.link}`}>
-                        <DropdownMenuItem>
-                          <span>{items.name}</span>
-                        </DropdownMenuItem>
-                      </Link>
-                    </DropdownMenuSub>
-                  ))}
+                  {servicesData.map((items) =>
+                    items?.link ? (
+                      <DropdownMenuSub key={items?.name}>
+                        <Link
+                          className="cursor-pointer"
+                          href={
+                            items.link.startsWith("/")
+                              ? items.link
+                              : `/services/${items.link}`
+                          }>
+                          <DropdownMenuItem>
+                            <span>{items?.name}</span>
+                          </DropdownMenuItem>
+                        </Link>
+                      </DropdownMenuSub>
+                    ) : null
+                  )}
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -76,7 +82,7 @@ const Header = () => {
             </Button>
           </Link>
           <div className="lg:hidden flex">
-            <MobileNav  />
+            <MobileNav />
           </div>
         </article>
       </header>

@@ -172,3 +172,9 @@ body {
     transform: translate(0, -0px);
   }
 }
+
+.sticky-enquiry-form {
+  position: sticky;
+  top: 6rem; /* Adjust as needed */
+  z-index: 20; /* Ensure it's above other content */
+}

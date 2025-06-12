@@ -30,12 +30,42 @@ export default {
       type: "string",
     },
     {
+      name: "whySeoImage",
+      title: "Why Seo Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",
       of: [
         {
           type: "block",
+        },
+      ],
+    },
+    {
+      name: "seoApproach",
+      title: "SEO Approach",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+          ],
         },
       ],
     },
@@ -53,6 +83,33 @@ export default {
           type: "block",
         },
       ],
+    },
+    {
+      name: "seoSearchIntent",
+      title: "SEO Search Intent",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "searchIntentFooter",
+      title: "Search Intent Footer",
+      type: "string",
     },
     {
       name: "serviceHeadline",
