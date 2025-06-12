@@ -26,13 +26,15 @@ const Cta = ({
                 {ctaPrimaryButton}
               </Button>
             </Link>
-            <Link target="_blank" href={ctaSecondarylink}>
-              <Button
-                variant="outline"
-                className="bg-primary text-white border-white">
-                {ctaSecondaryButton}
-              </Button>
-            </Link>
+            {ctaSecondarylink ? (
+              <Link target="_blank" href={ctaSecondarylink}>
+                <Button
+                  variant="outline"
+                  className="bg-primary text-white border-white">
+                  {ctaSecondaryButton}
+                </Button>
+              </Link>
+            ) : null}
           </div>
         </article>
       </section>

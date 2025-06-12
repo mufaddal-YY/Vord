@@ -1,6 +1,8 @@
 import Cta from "@/components/Common/Cta";
 import PageBanner from "@/components/Common/PageBanner";
 import SeoSearchIntent from "@/components/Seo/SeoSearchIntent";
+import SeoServices from "@/components/Seo/SeoServices";
+import VordAdvantage from "@/components/Seo/VordAdvantage";
 import WhySeo from "@/components/Seo/WhySeo";
 import { getSeoData } from "@/sanity/fetchedData";
 import seo from "@/sanity/schemaTypes/seo";
@@ -16,7 +18,9 @@ export default async function SearchEngineOptimization() {
       ))}
       <WhySeo seoData={seoData} />
       <SeoSearchIntent seoData={seoData} />
-      {/* {seoData.map((item, idx) => (
+      <SeoServices seoData={seoData} />
+      <VordAdvantage seoData={seoData} />
+      {seoData.map((item, idx) => (
         <div key={idx}>
           <Cta
             ctaTitle={item?.ctaTitle}
@@ -27,7 +31,7 @@ export default async function SearchEngineOptimization() {
             ctaSecondarylink={item?.ctaSecondarylink}
           />
         </div>
-      ))} */}
+      ))}
     </main>
   );
 }

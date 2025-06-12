@@ -117,6 +117,14 @@ export default {
       type: "string",
     },
     {
+      name: "serviceImage",
+      title: "Service Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
       name: "services",
       title: "B2B SEO Services",
       type: "array",
@@ -168,6 +176,14 @@ export default {
               name: "title",
               title: "Title",
               type: "string",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
             },
             {
               name: "description",

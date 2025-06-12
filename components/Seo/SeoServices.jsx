@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-const ServicesSection = ({ linkedinData }) => {
+const SeoServices = ({ seoData }) => {
   return (
     <main>
       <section className="py-[50px] container">
-        {linkedinData.map((item, idx) => (
+        {seoData.map((item, idx) => (
           <article className="flex flex-col lg:flex-row gap-4" key={idx}>
             <div className="w-full lg:w-5/12 p-4 " id="enquiry">
               <div className="sticky-enquiry-form p-6 rounded-xl bg-primary shadow-[0px_0px_10px_1px_#edf2f7] relative overflow-hidden flex flex-col">
@@ -65,4 +65,4 @@ const ServicesSection = ({ linkedinData }) => {
   );
 };
 
-export default ServicesSection;
+export default SeoServices;

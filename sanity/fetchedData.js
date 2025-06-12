@@ -160,6 +160,7 @@ export async function getSeoData() {
          },
          searchIntentFooter,
          serviceHeadline,
+         "serviceImage": serviceImage.asset->url,
          services[]{
          serviceTitle,
          servicedescription,
@@ -169,6 +170,7 @@ export async function getSeoData() {
          whyVord,
          advantage[]{
          title,
+         "image": image.asset->url,
          description,
          },
          ctaTitle,
