@@ -10,12 +10,13 @@ const VordAdvantage = ({ seoData }) => {
       <section className="container pb-[50px]">
         {seoData.map((item, idx) => (
           <article className="rounded-[25px] lg:p-6" key={idx}>
-            <div className="border-b-2 text-center space-y-2 p-2">
+            <div className="text-center space-y-2 py-3">
               <h4 className="text-3xl text-primary font-semibold">
                 {item?.whyVord}
               </h4>
             </div>
-            <div className="py-6">
+            <Separator />
+            <div className="py-3">
               <div className="">
                 <div className="py-6">
                   <div className="flex flex-col  lg:flex-row lg:gap-8">
@@ -24,9 +25,9 @@ const VordAdvantage = ({ seoData }) => {
                         key={i}
                         className="flex flex-col items-center relative w-full max-w-[400px]">
                         {/* Card */}
-                        <div className="mt-4 p-4 w-full h-[300px] bg-primary rounded-lg bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between">
+                        <div className="mt-4 p-4 w-full h-[300px] bg-white border border-primary hover:border-[#00EAB4] rounded-lg bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between">
                           <div>
-                            <div className="w-[40px] h-[40px] rounded-md bg-white p-2 flex items-center justify-center mx-auto lg:mx-0 mb-2">
+                            <div className="w-[40px] h-[40px] rounded-md bg-primary p-2 flex items-center justify-center mx-auto lg:mx-0 mb-2">
                               <Image
                                 src={data.icon}
                                 width={30}
@@ -34,11 +35,11 @@ const VordAdvantage = ({ seoData }) => {
                                 alt={data.alt}
                               />
                             </div>
-                            <h4 className="text-md text-white font-medium pb-2">
+                            <h4 className="text-md text-rimary font-medium pb-2">
                               {data.title}
                             </h4>
                             <Separator />
-                            <p className="text-sm py-4 text-white">
+                            <p className="text-sm py-4 text-gray-600">
                               {data.description}
                             </p>
                           </div>

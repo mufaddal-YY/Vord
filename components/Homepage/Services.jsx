@@ -1,6 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
 
 const Services = ({ homeData }) => {
   return (
@@ -20,14 +21,13 @@ const Services = ({ homeData }) => {
                     {item.services.map((data, i) => (
                       <div
                         key={i}
-                        className="p-6 bg-white rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between h-full">
+                        className="p-6 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between h-full bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center">
                         <div>
-                          <h4 className="text-lg font-semibold pb-2 border-b border-primary">
+                          <h4 className="text-lg font-semibold pb-2">
                             {data.title}
                           </h4>
-                          <p className="text-md pt-2 text-gray-700">
-                            {data.description}
-                          </p>
+                          <Separator />
+                          <p className="text-md pt-2">{data.description}</p>
                         </div>
                       </div>
                     ))}

@@ -12,7 +12,7 @@ const Cta = ({
 }) => {
   return (
     <main className="bg-white p-4">
-      <section className="container w-full lg:w-full bg-primary py-[70px] rounded-[30px] bg-[url('/ctaBg.png')] bg-contain bg-no-repeat bg-center">
+      <section className="container w-full lg:w-full bg-primary py-[70px] rounded-[30px] bg-none lg:bg-[url('/ctaBg.png')] bg-contain bg-no-repeat bg-center">
         <article className="flex flex-col items-center ">
           <h4 className="w-full py-4 lg:w-4/6 text-3xl lg:text-5xl text-white font-bold leading-snug text-center">
             {ctaTitle}

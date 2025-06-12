@@ -48,7 +48,9 @@ const MobileNav = () => {
                       className="cursor-pointer"
                       href={`/services/${items.link}`}>
                       <DropdownMenuItem>
-                        <span>{items.name}</span>
+                        <SheetClose>
+                          <span>{items.name}</span>
+                        </SheetClose>
                       </DropdownMenuItem>
                     </Link>
                   </DropdownMenuSub>

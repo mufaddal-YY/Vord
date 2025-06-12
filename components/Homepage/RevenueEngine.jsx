@@ -38,7 +38,7 @@ const RevenueEngine = ({ homeData }) => {
                 <div
                   className="w-full lg:w-3/4 my-4 mx-auto bg-gray-50 rounded-lg p-4"
                   key={i}>
-                  <div className="flex flex-col lg:flex-row items-start gap-4">
+                  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
                     {/* Icon box */}
                     <div className="w-[50px] h-[50px] rounded-md bg-primary p-2 flex items-center justify-center shrink-0">
                       <Image
@@ -50,7 +50,7 @@ const RevenueEngine = ({ homeData }) => {
                     </div>
 
                     {/* Text box */}
-                    <div>
+                    <div className="text-center lg:text-left">
                       <h6 className="text-lg font-medium">{data.title}</h6>
                       <p className="text-gray-600">{data.subTitle}</p>
                     </div>
