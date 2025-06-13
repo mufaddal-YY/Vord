@@ -19,11 +19,11 @@ const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
                 {item?.headline}
               </h2>
 
-              <p className="lg:w-3/4 text-center leading-snug my-6 text-gray-700 text-md md:text-lg lg:text-xl">
+              <p className="lg:w-3/4 text-center leading-snug my-4 text-gray-700 text-md md:text-lg lg:text-xl">
                 {item?.subHeadline}
               </p>
 
-              <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-6">
+              <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-2 lg:mt-4">
                 <Link target="_blank" href="">
                   <Button className="">Get Your Revenue Strategy →</Button>
                 </Link>

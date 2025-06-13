@@ -39,10 +39,9 @@ const PortableTextComponent = ({ content }) => {
         serializers={{
           h1: (props) => <h1 style={{ color: "red" }} {...props} />,
 
+          h2: (props) => <h2 style={{ fontSize: "32px" }} {...props} />,
           h3: (props) => <h3 style={{ fontSize: "28px" }} {...props} />,
           h4: (props) => <h4 style={{ fontSize: "24px" }} {...props} />,
-
-          h4: (props) => <h4 style={{ fontSize: "28px" }} {...props} />,
           h5: (props) => <h5 style={{ fontSize: "24px" }} {...props} />,
           li: ({ children }) => (
             <li className="special-list-item text-md flex lg:text-md list-none leading-snug py-2">

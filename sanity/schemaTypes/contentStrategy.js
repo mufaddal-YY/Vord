@@ -28,7 +28,14 @@ export default {
       title: "Description",
       type: "string",
     },
-
+    {
+      name: "whyImage",
+      title: "Why Content Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
     {
       name: "effectiveStrategyHeader",
       title: "Effective Strategy Header",
@@ -57,6 +64,14 @@ export default {
               title: "Description",
               type: "string",
             },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
+            },
           ],
         },
       ],
@@ -66,14 +81,46 @@ export default {
       title: "How Vord Builds Content",
       type: "string",
     },
-
     {
-      name: "content",
-      title: "Content",
+      name: "contentConvertsImage",
+      title: "Content Converts Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
+      name: "contentDescription",
+      title: "Content Description",
+      type: "string",
+    },
+    {
+      name: "strategyProcess",
+      title: "Strategy Process",
       type: "array",
       of: [
         {
-          type: "block",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
+            },
+          ],
         },
       ],
     },
@@ -86,6 +133,14 @@ export default {
           type: "block",
         },
       ],
+    },
+    {
+      name: "contentTypeImage",
+      title: "Content Type Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
     },
     {
       name: "whyVord",
