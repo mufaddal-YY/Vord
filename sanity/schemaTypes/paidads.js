@@ -28,6 +28,14 @@ export default {
       title: "Description",
       type: "string",
     },
+    {
+      name: "drivingImage",
+      title: "Driving B2B Growth Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
 
     {
       name: "whyPaidAds",
@@ -38,6 +46,14 @@ export default {
           type: "block",
         },
       ],
+    },
+    {
+      name: "whyPaidAdsImage",
+      title: "Why Paid Ads Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
     },
     {
       name: "adsManagement",
@@ -98,7 +114,7 @@ export default {
         },
       ],
     },
-    
+
     {
       name: "advantage",
       title: "Advantage",
@@ -116,6 +132,14 @@ export default {
               name: "description",
               title: "Description",
               type: "string",
+            },
+            {
+              name: "icon",
+              title: "Icon",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
             },
           ],
         },

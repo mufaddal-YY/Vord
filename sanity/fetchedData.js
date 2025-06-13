@@ -281,7 +281,9 @@ export async function getPaidAds() {
          metaKeywords,
          headline,
          description,
+         "drivingImage": drivingImage.asset->url,
          whyPaidAds,
+         "whyPaidAdsImage": whyPaidAdsImage.asset->url,
          adsManagement[]{
            title,
            description,
@@ -294,6 +296,7 @@ export async function getPaidAds() {
          advantage[]{
            title,
            description,
+           "icon": icon.asset->url,
          },
          ctaTitle,
          ctaDescription,

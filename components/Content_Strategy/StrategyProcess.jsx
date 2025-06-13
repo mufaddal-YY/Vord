@@ -21,7 +21,7 @@ const StrategyProcess = ({ contentData }) => {
                     width={600}
                     height={600}
                     alt="Image"
-                    className="radius-lg"
+                    className="rounded-xl"
                   />
                 </div>
               </div>

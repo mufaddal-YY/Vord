@@ -22,7 +22,7 @@ export default async function ContentStrategy() {
       <ContentType contentData={contentData} />
       <WhyPartner contentData={contentData} />
       {contentData.map((item, idx) => (
-        <div className="py-[50x]" key={idx}>
+        <div className="py-[50px]" key={idx}>
           <Cta
             ctaTitle={item?.ctaTitle}
             ctaDescription={item?.ctaDescription}
