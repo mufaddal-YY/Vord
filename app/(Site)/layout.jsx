@@ -19,6 +19,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MH1P5WPGY6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MH1P5WPGY6');
+          `}
+        </Script>
         <Header />
         <main className="mt-12">
           {children}

@@ -1,5 +1,4 @@
 "use client";
-import { BsArrowRight } from "react-icons/bs";
 import Slider from "react-slick";
 import Image from "next/image";
 
@@ -12,6 +11,7 @@ const ProblemSlider = ({ sliderData }) => {
     arrows: false,
     autoplay: true,
     loop: true,
+    pauseOnHover: false,
 
     responsive: [
       {
