@@ -15,7 +15,13 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Button } from "../ui/button";
 import MobileNav from "./MobileNav";
 import { servicesData } from "@/lib/constants";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import EnquiryForm from "../Common/EnquiryForm";
 const Header = () => {
   return (
     <main className="bg-primary fixed w-full top-0 z-[1000] shadow-md">
@@ -73,14 +79,21 @@ const Header = () => {
               Contact
             </Link>
           </nav>
-          <Link href={"/contact"} className="lg:flex hidden">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="flex gap-2 text-primary bg-white font-semibold items-center">
-              Let's Talk
-            </Button>
-          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="flex gap-2 text-primary bg-white font-semibold items-center">
+                Let's Talk
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-h-[600px] overflow-y-scroll">
+              {/* <DialogTitle></DialogTitle> */}
+              <EnquiryForm />
+            </DialogContent>
+          </Dialog>
+
           <div className="lg:hidden flex">
             <MobileNav />
           </div>

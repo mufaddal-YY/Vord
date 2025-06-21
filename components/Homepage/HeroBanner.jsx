@@ -3,7 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Clientele from "../Common/Clientele";
 import Testimonials from "../Common/Testimonials";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import EnquiryForm from "../Common/EnquiryForm";
 const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
   return (
     <main className="w-full bg-white relative items-center justify-center">
@@ -24,10 +30,18 @@ const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
               </p>
 
               <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-2 lg:mt-4">
-                <Link target="_blank" href="">
-                  <Button className="">Get Your Revenue Strategy →</Button>
-                </Link>
-                <Link target="_blank" href="">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Link target="_blank" href="">
+                      <Button className="">Get Your Revenue Strategy →</Button>
+                    </Link>
+                  </DialogTrigger>
+                  <DialogContent className="max-h-[600px] overflow-y-scroll">
+                    {/* <DialogTitle></DialogTitle> */}
+                    <EnquiryForm />
+                  </DialogContent>
+                </Dialog>
+                <Link target="_blank" href="#results">
                   <Button variant="outline" className="">
                     See Our Results
                   </Button>

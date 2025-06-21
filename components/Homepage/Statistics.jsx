@@ -2,7 +2,7 @@ import { Button } from "../ui/button";
 
 const Statistics = ({ homeData }) => {
   return (
-    <main className="bg-primary">
+    <main className="bg-primary" id="results">
       <section className="container py-[50px]">
         {homeData.map((item, idx) => (
           <article className="lg:p-6 flex flex-col lg:flex-row " key={idx}>
