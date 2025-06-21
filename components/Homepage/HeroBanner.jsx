@@ -32,9 +32,7 @@ const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
               <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-2 lg:mt-4">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Link target="_blank" href="">
-                      <Button className="">Get Your Revenue Strategy →</Button>
-                    </Link>
+                    <Button className="">Get Your Revenue Strategy →</Button>
                   </DialogTrigger>
                   <DialogContent className="max-h-[600px] overflow-y-scroll">
                     {/* <DialogTitle></DialogTitle> */}
