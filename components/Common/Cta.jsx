@@ -1,7 +1,12 @@
-import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import EnquiryForm from "./EnquiryForm";
 const Cta = ({
   ctaTitle,
   ctaDescription,
@@ -21,11 +26,18 @@ const Cta = ({
             {ctaDescription}
           </p>
           <div className="flex flex-col justify-center items-center gap-2 md:flex-row lg:flex-row mt-6">
-            <Link target="_blank" href={ctalink}>
-              <Button variant="secondary" className="bg-white">
-                {ctaPrimaryButton}
-              </Button>
-            </Link>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="secondary" className="bg-white">
+                  {ctaPrimaryButton}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-h-[600px] overflow-y-scroll">
+                {/* <DialogTitle></DialogTitle> */}
+                <EnquiryForm />
+              </DialogContent>
+            </Dialog>
+
             {ctaSecondarylink ? (
               <Link target="_blank" href={ctaSecondarylink}>
                 <Button
