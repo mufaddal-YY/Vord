@@ -50,7 +50,8 @@ const ProblemSlider = ({ sliderData }) => {
                 {/* Outer wrapper for centering both image and text vertically */}
                 <div className="flex flex-col justify-center items-center text-center gap-4">
                   {/* Image container */}
-                  <div className="relative w-[300px] h-[300px] overflow-hidden rounded-full">
+                  <div className="relative w-[350px] h-[350px] overflow-hidden rounded-full">
+                    {/* Image */}
                     <Image
                       src={item?.problemImage}
                       alt={item?.alt}
@@ -58,9 +59,16 @@ const ProblemSlider = ({ sliderData }) => {
                       objectFit="cover"
                       className="rounded-full"
                     />
+
+                    {/* Overlay */}
+                    <div className="absolute bottom-0 left-0 w-full h-1/3 bg-[#032E3A] flex pt-4 justify-center rounded-b-full">
+                      <p className="text-white w-3/4 text-center px-4 text-md font-medium">
+                        {item?.problemTitle}
+                      </p>
+                    </div>
                   </div>
                   {/* Title text */}
-                  <p className="text-center">{item.problemTitle}</p>
+                  {/* <p className="text-center">{item.problemTitle}</p> */}
                 </div>
               </div>
             ))}
