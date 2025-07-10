@@ -176,6 +176,19 @@ export default {
               title: "Description",
               type: "string",
             },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              options: {
+                hotspot: true, // <-- Defaults to false
+              },
+            },
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+            },
           ],
         },
       ],

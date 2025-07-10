@@ -31,14 +31,16 @@ export async function getHomeData() {
          revenueEngineProcess[]{
           title,
           subTitle,
-           keyDeliverable,
-           "icon": icon.asset->url,
-           alt,
+          keyDeliverable,
+          "icon": icon.asset->url,
+          alt,
          },
          servicesHeadline,
          services[]{
            title,
            description,
+           "image": image.asset->url,
+          alt,
          },
          resultHeadline,
          results[]{
