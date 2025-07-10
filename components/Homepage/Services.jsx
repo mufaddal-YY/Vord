@@ -16,18 +16,29 @@ const Services = ({ homeData }) => {
             </div>
             <div className="py-6">
               <div className="container mx-auto px-4">
-                <div className="flex flex-col items-center lg:items-start">
+                <div className="flex flex-col">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     {item.services.map((data, i) => (
                       <div
                         key={i}
-                        className="p-6 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between h-full bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center">
-                        <div>
+                        className="p-1 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col h-full bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center">
+                        <div className="relative w-full h-[200px] lg:h-[200px] overflow-hidden rounded-md">
+                          {/* Image */}
+                          <Image
+                            src={data?.image}
+                            alt={data?.alt}
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="center center"
+                            className="rounded-t-md"
+                          />
+                        </div>
+                        <div className="p-4">
                           <h4 className="text-lg font-semibold pb-2">
-                            {data.title}
+                            {data?.title}
                           </h4>
                           <Separator />
-                          <p className="text-md pt-2">{data.description}</p>
+                          <p className="text-md pt-2">{data?.description}</p>
                         </div>
                       </div>
                     ))}
@@ -35,9 +46,9 @@ const Services = ({ homeData }) => {
                 </div>
               </div>
             </div>
-            <div className="py-4 flex justify-center">
+            {/* <div className="py-4 flex justify-center">
               <Button>Explore Our Services</Button>
-            </div>
+            </div> */}
           </article>
         ))}
       </section>
