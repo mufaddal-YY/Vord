@@ -2,10 +2,12 @@ import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import EnquiryForm from "../Common/EnquiryForm";
 
 const Services = ({ homeData }) => {
   return (
-    <main className="bg-gray-50">
+    <main className="bg-gray-50" id="services">
       <section className="container py-[50px]">
         {homeData.map((item, idx) => (
           <article className="lg:p-6" key={idx}>
@@ -46,9 +48,17 @@ const Services = ({ homeData }) => {
                 </div>
               </div>
             </div>
-            {/* <div className="py-4 flex justify-center">
-              <Button>Explore Our Services</Button>
-            </div> */}
+            <div className="py-4 flex justify-center">
+              <Dialog>
+                <DialogTrigger>
+                  <Button>Explore Our Services</Button>
+                </DialogTrigger>
+                <DialogContent className="max-h-[600px] overflow-y-scroll">
+                  {/* <DialogTitle></DialogTitle> */}
+                  <EnquiryForm />
+                </DialogContent>
+              </Dialog>
+            </div>
           </article>
         ))}
       </section>

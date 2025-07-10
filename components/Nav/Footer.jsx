@@ -3,11 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo_b.png";
 import { MdEmail, MdCall } from "react-icons/md";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 import { servicesData } from "@/lib/constants";
 
 const Footer = () => {
-
   return (
     <section className="py-4 bg-white">
       <div className="container">
@@ -17,6 +21,7 @@ const Footer = () => {
               <Link href={"/"} className="flex items-center">
                 <Image width={100} height={50} src={Logo} alt="footer logo" />
               </Link>
+              <p className="py-2 font-medium text-sm">Proclaim your vision</p>
             </div>
             <div className="py-2">
               <div className="flex flex-row justify-start gap-4">
@@ -27,7 +32,12 @@ const Footer = () => {
                 </Link>
                 <Link target="_blank" href={""} className="flex items-center">
                   <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
-                    <FaFacebookF />
+                    <FaLinkedin />
+                  </div>
+                </Link>
+                <Link target="_blank" href={""} className="flex items-center">
+                  <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
+                    <FaTwitter />
                   </div>
                 </Link>
               </div>

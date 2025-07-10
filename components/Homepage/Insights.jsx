@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Insights = ({ homeData }) => {
   return (
@@ -42,7 +43,9 @@ const Insights = ({ homeData }) => {
               </div>
             </div>
             <div className="py-4 flex justify-center">
+              <Link href={"/#services"}>
               <Button>Explore Our Services</Button>
+              </Link>
             </div>
           </article>
         ))}
