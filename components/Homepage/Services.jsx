@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import EnquiryForm from "../Common/EnquiryForm";
+import Link from "next/link";
 
 const Services = ({ homeData }) => {
   return (
@@ -25,22 +26,28 @@ const Services = ({ homeData }) => {
                         key={i}
                         className="p-1 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col h-full bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center">
                         <div className="relative w-full h-[200px] lg:h-[200px] overflow-hidden rounded-md">
-                          {/* Image */}
-                          <Image
-                            src={data?.image}
-                            alt={data?.alt}
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="center center"
-                            className="rounded-t-md"
-                          />
+                          <Link href={`/services/${data?.link}`}>
+                            {/* Image */}
+                            <Image
+                              src={data?.image}
+                              alt={data?.alt}
+                              layout="fill"
+                              objectFit="cover"
+                              objectPosition="center center"
+                              className="rounded-t-md"
+                            />
+                          </Link>
                         </div>
                         <div className="p-4">
-                          <h4 className="text-lg font-semibold pb-2">
-                            {data?.title}
-                          </h4>
+                          <Link href={`/services/${data?.link}`}>
+                            <h4 className="text-lg font-semibold pb-2">
+                              {data?.title}
+                            </h4>
+                          </Link>
                           <Separator />
-                          <p className="text-md pt-2">{data?.description}</p>
+                          <Link href={`/services/${data?.link}`}>
+                            <p className="text-md pt-2">{data?.description}</p>
+                          </Link>
                         </div>
                       </div>
                     ))}

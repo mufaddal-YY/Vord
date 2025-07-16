@@ -39,6 +39,7 @@ export async function getHomeData() {
          services[]{
            title,
            description,
+           link,
            "image": image.asset->url,
           alt,
          },

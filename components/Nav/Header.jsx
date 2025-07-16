@@ -29,7 +29,7 @@ const Header = () => {
         <article className="flex flex-row justify-between items-center gap-4">
           <div className="flex flex-row justify-between items-center gap-4">
             <div>
-              <Link href="/">
+              <Link className="cursor-pointer" href="/">
                 <Image src={Logo} width={100} height={100} alt="Logo" />
               </Link>
             </div>

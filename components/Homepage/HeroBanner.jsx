@@ -12,9 +12,7 @@ import {
 import EnquiryForm from "../Common/EnquiryForm";
 const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
   return (
-    <main className="w-full bg-white relative items-center justify-center">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
+    <main className="w-full bg-white relative items-center justify-center bg-[url('/heroBg.png')] bg-no-repeat bg-[length:auto_25%] bg-[position:center_15%] lg:bg-center lg:bg-[length:55%]">
       <section className="container mx-auto py-[80px]">
         <div className="flex justify-center relative z-10">
           {homeData?.map((item, i) => (
