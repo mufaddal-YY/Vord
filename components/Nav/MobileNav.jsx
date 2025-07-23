@@ -18,6 +18,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { servicesData } from "@/lib/constants";
+import { Button } from "../ui/button";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog";
+import EnquiryForm from "../Common/EnquiryForm";
 
 const MobileNav = () => {
   return (
@@ -64,6 +67,32 @@ const MobileNav = () => {
             className="text-md font-semibold text-white px-4 py-2">
             <SheetClose>About</SheetClose>
           </Link>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <span className="text-md cursor-pointer flex flex-row items-center gap-2 font-semibold text-white px-4 py-2 transition-colors duration-600 ease-in-out">
+                Services <IoIosArrowDown />
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-106">
+              <DropdownMenuGroup>
+                <DropdownMenuSub>
+                  <Link className="cursor-pointer" href={"/blogs"}>
+                    <DropdownMenuItem>
+                      <span>Blogs</span>
+                    </DropdownMenuItem>
+                  </Link>
+                </DropdownMenuSub>
+                <DropdownMenuSub>
+                  <Link className="cursor-pointer" href={"/case-studies"}>
+                    <DropdownMenuItem>
+                      <span>Case Studies</span>
+                    </DropdownMenuItem>
+                  </Link>
+                </DropdownMenuSub>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Link
             href={"/contact"}

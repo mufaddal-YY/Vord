@@ -2,7 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog";
 import EnquiryForm from "../Common/EnquiryForm";
 import Link from "next/link";
 
@@ -57,11 +57,15 @@ const Services = ({ homeData }) => {
             </div>
             <div className="py-4 flex justify-center">
               <Dialog>
-                <DialogTrigger>
+                <DialogTrigger asChild>
                   <Button>Explore Our Services</Button>
                 </DialogTrigger>
                 <DialogContent className="max-h-[600px] overflow-y-scroll">
-                  {/* <DialogTitle></DialogTitle> */}
+                  <DialogTitle>
+                    <h4 className="text-3xl font-bold py-2 mb-4 text-left text-rimary">
+                      Enquire Now
+                    </h4>
+                  </DialogTitle>
                   <EnquiryForm />
                 </DialogContent>
               </Dialog>

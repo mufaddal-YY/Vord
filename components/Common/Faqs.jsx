@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import PortableTextComponent from "../ui/PortableTextComponent";
 import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog";
 import EnquiryForm from "./EnquiryForm";
 
 const Faqs = ({ faqData }) => {
@@ -36,11 +36,15 @@ const Faqs = ({ faqData }) => {
         </div>
         <div className="py-4 flex justify-center">
           <Dialog>
-            <DialogTrigger>
+            <DialogTrigger asChild>
               <Button>Talk to us</Button>
             </DialogTrigger>
             <DialogContent className="max-h-[600px] overflow-y-scroll">
-              {/* <DialogTitle></DialogTitle> */}
+              <DialogTitle>
+                <h4 className="text-3xl font-bold py-2 mb-4 text-left text-rimary">
+                  Enquire Now
+                </h4>
+              </DialogTitle>
               <EnquiryForm />
             </DialogContent>
           </Dialog>

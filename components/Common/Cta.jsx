@@ -33,7 +33,11 @@ const Cta = ({
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-h-[600px] overflow-y-scroll">
-                {/* <DialogTitle></DialogTitle> */}
+                <DialogTitle>
+                  <h4 className="text-3xl font-bold py-2 mb-4 text-left text-rimary">
+                    Enquire Now
+                  </h4>
+                </DialogTitle>
                 <EnquiryForm />
               </DialogContent>
             </Dialog>

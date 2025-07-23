@@ -104,17 +104,22 @@ const Header = () => {
               Contact
             </Link>
           </nav>
+
           <Dialog>
             <DialogTrigger asChild>
               <Button
                 size="lg"
                 variant="secondary"
-                className="flex gap-2 text-primary bg-white font-semibold items-center">
+                className="gap-2 text-primary bg-white font-semibold items-center hidden lg:flex">
                 Let's Talk
               </Button>
             </DialogTrigger>
             <DialogContent className="max-h-[600px] overflow-y-scroll">
-              {/* <DialogTitle></DialogTitle> */}
+              <DialogTitle>
+                <h4 className="text-3xl font-bold py-2 mb-4 text-left text-rimary">
+                  Enquire Now
+                </h4>
+              </DialogTitle>
               <EnquiryForm />
             </DialogContent>
           </Dialog>

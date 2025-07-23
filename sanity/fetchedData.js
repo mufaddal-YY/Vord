@@ -450,7 +450,7 @@ export async function getContactData() {
         linkedin,
         instagram,
         facebook,
-        youtube,
+        twitter,
         }`,
     {},
     defaultFetchOptions

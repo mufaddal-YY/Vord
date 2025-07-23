@@ -66,9 +66,7 @@ const EnquiryForm = () => {
     <main className="bg-transparent p-3">
       <section>
         <article>
-          <h4 className="text-3xl font-bold py-2 mb-4 text-left text-white">
-            Enquire Now
-          </h4>
+          
           <Form {...form}>
             <form
               //   action={sendEmail}
@@ -81,7 +79,7 @@ const EnquiryForm = () => {
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">First Name</FormLabel>
+                        <FormLabel className="text-primary">First Name</FormLabel>
                         <FormControl>
                           <Input placeholder="First name" {...field} />
                         </FormControl>
@@ -95,7 +93,7 @@ const EnquiryForm = () => {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">Last Name</FormLabel>
+                        <FormLabel className="text-primary">Last Name</FormLabel>
                         <FormControl>
                           <Input placeholder="Last name" {...field} />
                         </FormControl>
@@ -112,7 +110,7 @@ const EnquiryForm = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">Email</FormLabel>
+                        <FormLabel className="text-primary">Email</FormLabel>
                         <FormControl>
                           <Input placeholder="Email" {...field} />
                         </FormControl>
@@ -126,7 +124,7 @@ const EnquiryForm = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">Phone</FormLabel>
+                        <FormLabel className="text-primary">Phone</FormLabel>
                         <FormControl>
                           <Input placeholder="Phone" {...field} />
                         </FormControl>
@@ -142,7 +140,7 @@ const EnquiryForm = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">Message</FormLabel>
+                        <FormLabel className="text-primary">Message</FormLabel>
                         <FormControl>
                           <Textarea placeholder="Message here" {...field} />
                         </FormControl>
@@ -152,7 +150,7 @@ const EnquiryForm = () => {
                 </div>
               </div>
               <div className="flex justify-center py-4">
-                <Button className="px-12 py-6 bg-white text-primary font-bold" variant="secondary" size="lg" type="submit" disabled={isLoading}>
+                <Button className="px-12 py-6 bg-primary text-white font-bold" size="lg" type="submit" disabled={isLoading}>
                   {isLoading ? "Submitting..." : "Submit Enquiry"}
                 </Button>
               </div>
