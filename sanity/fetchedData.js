@@ -49,11 +49,6 @@ export async function getHomeData() {
            description,
          },
          insightTitle,
-         insights[]{
-          insightTitle,
-          "insightImage": insightImage.asset->url,
-          alt,
-         },
          poweredByTitle,
          poweredBySubTitle,
          "poweredByImage": poweredByImage.asset->url,
@@ -394,6 +389,49 @@ export async function getBlogDetailData(slug) {
       "mainImage": mainImage.asset->url,
       author,
       content,
+    }`,
+    { slug }
+  );
+  return result;
+}
+
+export async function getCaseStudiesData() {
+  const result = await client.fetch(
+    groq`*[_type == "caseStudies"] | order(_createdAt desc){
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      metaTitle,
+      metaDescription,
+      metaKeywords,
+      excerpt,
+      "mainImage": mainImage.asset->url,
+    }`,
+    {},
+    defaultFetchOptions
+  );
+  return result;
+}
+
+export async function getCaseStudiesDetailData(slug) {
+  const result = await client.fetch(
+    groq`*[_type == "caseStudies" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      metaTitle,
+      metaDescription,
+      metaKeywords,
+      excerpt,
+      "mainImage": mainImage.asset->url,
+      intro,
+      problemStatement,
+      aboutCompany,
+      ourSolution,
+      result,
+      clientReview
     }`,
     { slug }
   );

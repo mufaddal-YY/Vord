@@ -10,7 +10,8 @@ import seo from "./seo";
 import testimonials from "./testimonials";
 import blogs from "./blogs";
 import contact from "./contact";
+import caseStudies from "./caseStudies";
 
 export const schema = {
-  types: [home, linkedin, seo, emailMarketing, contentStrategy, paidads, about, clientele, testimonials, faqs, blogs, contact],
+  types: [home, linkedin, seo, emailMarketing, contentStrategy, paidads, about, clientele, testimonials, faqs, blogs, caseStudies, contact],
 };

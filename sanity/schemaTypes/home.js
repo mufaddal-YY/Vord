@@ -231,36 +231,6 @@ export default {
       type: "string",
     },
     {
-      name: "insights",
-      title: "Insights",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "insightTitle",
-              title: "Insight Title",
-              type: "string",
-            },
-            {
-              name: "insightImage",
-              title: "Insight Image",
-              type: "image",
-              options: {
-                hotspot: true, // <-- Defaults to false
-              },
-            },
-            {
-              name: "alt",
-              title: "Alt text",
-              type: "string",
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: "poweredByTitle",
       title: "Powered By Title",
       type: "string",

@@ -29,8 +29,6 @@ export default async function Home() {
   const faqData = await getFaqData();
   const blogData = await getBlogData();
 
-
-
   return (
     <main className="mt-12">
       <HeroBanner
