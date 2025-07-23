@@ -28,7 +28,7 @@ export default async function Home() {
   const testimonialsData = await getTestimonials();
   const faqData = await getFaqData();
   const blogData = await getBlogData();
-  console.log(blogData)
+
 
 
   return (
