@@ -9,9 +9,9 @@ const RevenueEngine = ({ homeData }) => {
           <article className="bg-white rounded-[25px] p-6" key={idx}>
             <div className="border-b-2 text-center space-y-2 p-2">
               <h4 className="text-3xl text-primary font-semibold">
-                {item.problemHeadline}
+                {item.problemSubHeadline}:
               </h4>
-              <h6 className="text-lg font-medium">{item.problemSubHeadline}</h6>
+              {/* <h6 className="text-lg font-medium">{item.problemSubHeadline}</h6> */}
             </div>
             <div className="py-6">
               <div className="items-center">

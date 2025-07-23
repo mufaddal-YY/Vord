@@ -12,7 +12,7 @@ import {
 import EnquiryForm from "../Common/EnquiryForm";
 const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
   return (
-    <main className="w-full bg-white relative items-center justify-center bg-[url('/heroBg.png')] bg-no-repeat bg-[length:auto_25%] bg-[position:center_15%] lg:bg-center lg:bg-[length:55%]">
+    <main className="w-full bg-white relative items-center justify-center bg-[url('/heroBg.png')] bg-no-repeat bg-[length:auto_25%] bg-[position:center_15%] lg:bg-center lg:bg-[length:35%]">
       <section className="container mx-auto py-[80px]">
         <div className="flex justify-center relative z-10">
           {homeData?.map((item, i) => (
@@ -37,7 +37,7 @@ const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
                     <EnquiryForm />
                   </DialogContent>
                 </Dialog>
-                <Link target="_blank" href="#results">
+                <Link href="#results">
                   <Button variant="outline" className="">
                     See Our Results
                   </Button>

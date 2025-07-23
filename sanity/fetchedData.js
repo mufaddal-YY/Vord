@@ -360,7 +360,7 @@ export async function getFaqData() {
 
 export async function getBlogData() {
   const result = await client.fetch(
-    groq`*[_type == "blog"] | order(publishedAt desc){
+    groq`*[_type == "blogs"] | order(publishedAt desc){
       _id,
       _createdAt,
       title,
@@ -381,7 +381,7 @@ export async function getBlogData() {
 
 export async function getBlogDetailData(slug) {
   const result = await client.fetch(
-    groq`*[_type == "blogs" && slug.current == $slug][0]{
+    groq`*[_type == "blog" && slug.current == $slug][0]{
       _id,
       _createdAt,
       title,
@@ -393,14 +393,29 @@ export async function getBlogDetailData(slug) {
       excerpt,
       "mainImage": mainImage.asset->url,
       author,
-      content[]{
-        _type == "image" => {
-          "asset": asset->url
-        }
-      }
+      content,
     }`,
+    { slug }
+  );
+  return result;
+}
+
+export async function getContactData() {
+  const result = await client.fetch(
+    groq`*[_type == "contact"]{
+         _id,
+         _createdAt,
+        email,
+        contact,
+        whatsapp,
+        address,
+        linkedin,
+        instagram,
+        facebook,
+        youtube,
+        }`,
     {},
-    { slug, defaultFetchOptions }
+    defaultFetchOptions
   );
   return result;
 }

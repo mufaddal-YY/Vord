@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 const Statistics = ({ homeData }) => {
@@ -11,9 +12,11 @@ const Statistics = ({ homeData }) => {
                 {item?.resultHeadline}
               </h4>
               <div className="py-4">
-                <Button variant="secondary" className="bg-white text-primary">
-                  View Detailed Case Studies
-                </Button>
+                <Link target="_blank" href={"/case-studies"}>
+                  <Button variant="secondary" className="bg-white text-primary">
+                    View Detailed Case Studies
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="w-full lg:w-1/2 py-6">

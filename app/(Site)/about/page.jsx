@@ -19,11 +19,9 @@ export default async function About() {
   const testimonialsData = await getTestimonials();
   return (
     <main>
-      {aboutData.map((item, idx) => (
-        <div key={idx}>
-          <PageBanner headline="About us" />
-        </div>
-      ))}
+      <div>
+        <PageBanner headline="About us" />
+      </div>
 
       <main className="bg-white">
         <section className="container py-[50px]">

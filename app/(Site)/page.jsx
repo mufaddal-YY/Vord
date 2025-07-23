@@ -10,6 +10,7 @@ import Services from "@/components/Homepage/Services";
 import Statistics from "@/components/Homepage/Statistics";
 import WhyVord from "@/components/Homepage/WhyVord";
 import {
+  getBlogData,
   getClientele,
   getFaqData,
   getHomeData,
@@ -26,6 +27,9 @@ export default async function Home() {
   const clienteleData = await getClientele();
   const testimonialsData = await getTestimonials();
   const faqData = await getFaqData();
+  const blogData = await getBlogData();
+  console.log(blogData)
+
 
   return (
     <main className="mt-12">
@@ -38,7 +42,7 @@ export default async function Home() {
       <CustomRevenueEngine homeData={homeData} />
       <Services homeData={homeData} />
       <Statistics homeData={homeData} />
-      <Insights homeData={homeData} />
+      <Insights homeData={homeData} blogData={blogData} />
       <PoweredBySection homeData={homeData} />
       <WhyVord homeData={homeData} />
       <MarketingPerformance
