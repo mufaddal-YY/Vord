@@ -40,14 +40,6 @@ export default async function Home() {
       <CustomRevenueEngine homeData={homeData} />
       <Services homeData={homeData} />
       <Statistics homeData={homeData} />
-      <Insights homeData={homeData} blogData={blogData} />
-      <PoweredBySection homeData={homeData} />
-      <WhyVord homeData={homeData} />
-      <MarketingPerformance
-        homeData={homeData}
-        testimonialsData={testimonialsData}
-      />
-      <Faqs faqData={faqData} />
       <Cta
         ctaTitle={"Ready to Transform Your Marketing Into a Revenue Engine?"}
         ctaDescription={
@@ -58,6 +50,14 @@ export default async function Home() {
         ctaSecondaryButton={"See Our Process"}
         ctaSecondarylink={"#"}
       />
+      <Insights homeData={homeData} blogData={blogData} />
+      <PoweredBySection homeData={homeData} />
+      <WhyVord homeData={homeData} />
+      <MarketingPerformance
+        homeData={homeData}
+        testimonialsData={testimonialsData}
+      />
+      <Faqs faqData={faqData} />
     </main>
   );
 }
