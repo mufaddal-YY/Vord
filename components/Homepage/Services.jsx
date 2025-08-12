@@ -24,7 +24,7 @@ const Services = ({ homeData }) => {
                     {item.services.map((data, i) => (
                       <div
                         key={i}
-                        className="p-1 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col h-full bg-[url('/bg_rounded.png')] bg-cover bg-no-repeat bg-center">
+                        className="p-1 bg-white hover:bg-[#032E3A] text-primary hover:text-white border border-white hover:border-primary rounded-lg text-center lg:text-left flex flex-col h-full">
                         <div className="relative w-full h-[200px] lg:h-[200px] overflow-hidden rounded-md">
                           <Link href={`/services/${data?.link}`}>
                             {/* Image */}
