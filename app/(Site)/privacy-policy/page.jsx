@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
       <section className="container py-[50px]">
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Privacy Policy</CardTitle>
+            <h1 className="text-3xl font-bold">Privacy Policy</h1>
           </CardHeader>
           <CardContent className="prose max-w-none">
         <p>
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
           For any questions, contact us at <a href="mailto:info@vord.marketing">info@vord.marketing</a>.
         </p>
 
-        <h2 className="text-2xl font-semibold">1. What We Collect</h2>
+        <h2 className="text-2xl font-semibold mt-8">1. What We Collect</h2>
         <p>We may collect:</p>
         <ul>
           <li>
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold">2. How We Use Your Data</h2>
+        <h2 className="text-2xl font-semibold mt-8">2. How We Use Your Data</h2>
         <p>We use collected information to:</p>
         <ul>
           <li>Deliver, improve, and optimize our services.</li>
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
           <li>Ensure security and prevent fraudulent activity.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold">3. Cookies</h2>
+        <h2 className="text-2xl font-semibold mt-8">3. Cookies</h2>
         <p>
           Cookies help us streamline navigation, remember preferences, and
           analyze engagement.
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
           limited.
         </p>
 
-        <h2 className="text-2xl font-semibold">4. Data Security</h2>
+        <h2 className="text-2xl font-semibold mt-8">4. Data Security</h2>
         <p>
           We implement industry-standard security measures to protect your
           information, including restricted access, secure servers, and
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
           of online transmission is 100% secure.
         </p>
 
-        <h2 className="text-2xl font-semibold">5. Data Sharing</h2>
+        <h2 className="text-2xl font-semibold mt-8">5. Data Sharing</h2>
         <p>We do not sell your data. We may share information only with:</p>
         <ul>
           <li>
@@ -94,7 +94,7 @@ export default function PrivacyPolicyPage() {
           <li>Legal authorities, if required by law.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold">6. Policy Updates</h2>
+        <h2 className="text-2xl font-semibold mt-8">6. Policy Updates</h2>
         <p>
           We may update this policy to reflect new practices, technologies, or
           regulations. Changes will be posted on this page with an updated
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
           acceptance.
         </p>
 
-        <h2 className="text-2xl font-semibold">7. Your Choices</h2>
+        <h2 className="text-2xl font-semibold mt-8">7. Your Choices</h2>
         <ul>
           <li>
             You can request access to, correction of, or deletion of your
