@@ -99,6 +99,12 @@ const Footer = () => {
                 <li className="text-md capitalize">
                   <Link href={"/privacy-policy"}>Privacy Policy</Link>
                 </li>
+                <li className="text-md capitalize">
+                  <Link href={"/blogs"}>Blogs</Link>
+                </li>
+                <li className="text-md capitalize">
+                  <Link href={"/case-studies"}>Case Studies</Link>
+                </li>
               </ul>
             </div>
           </div>
