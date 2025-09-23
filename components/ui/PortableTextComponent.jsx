@@ -1,11 +1,17 @@
 import { FiCheckCircle } from "react-icons/fi";
 import PortableText from "react-portable-text";
+import { urlFor } from "@/sanity/lib/image";
+import { projectId, dataset } from "@/sanity/env";
 
 const myPortableTextComponents = {
   types: {
-    image: ({ value }) => (
-      <img src={value.imageUrl} alt={value.alt || "Image"} />
-    ),
+    image: ({ value }) => {
+      const src =
+        (value && value.asset && value.asset.url) ||
+        (value && urlFor(value)?.url());
+      if (!src) return null;
+      return <img src={src} alt={value?.alt || "Image"} />;
+    },
     callToAction: ({ value, isInline }) =>
       isInline ? (
         <a href={value.url} className="callToActionInline">
@@ -36,6 +42,8 @@ const PortableTextComponent = ({ content }) => {
       <PortableText
         content={content}
         components={myPortableTextComponents}
+        projectId={projectId}
+        dataset={dataset}
         serializers={{
           h1: (props) => <h1 style={{ color: "red" }} {...props} />,
 
