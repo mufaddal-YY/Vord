@@ -4,11 +4,17 @@ export const metadata = {
     "Vord Marketing's privacy policy describing data collection, usage, cookies, security, sharing, updates, and your choices.",
 };
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="bg-white">
-      <section className="container py-[50px] prose max-w-none">
-        <h1 className="text-3xl font-bold">Privacy Policy</h1>
+      <section className="container py-[50px]">
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle>Privacy Policy</CardTitle>
+          </CardHeader>
+          <CardContent className="prose max-w-none">
         <p>
           Vord Marketing (“Vord”, “we”, “our”) respects your privacy and is
           committed to safeguarding your personal information. This policy
@@ -105,6 +111,8 @@ export default function PrivacyPolicyPage() {
           <li>You may unsubscribe from marketing communications at any time.</li>
           <li>You may opt out of cookies through your browser settings.</li>
         </ul>
+          </CardContent>
+        </Card>
       </section>
     </main>
   );
