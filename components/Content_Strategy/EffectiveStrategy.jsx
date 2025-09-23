@@ -26,7 +26,7 @@ const EffectiveStrategy = ({ contentData }) => {
                           <div className="rounded-lg p-2">
                             <Image
                               src={data?.image}
-                              alt="Image"
+                            alt={data?.title || "Effective strategy icon"}
                               width={30}
                               height={30}
                               className="object-cover rounded-lg"

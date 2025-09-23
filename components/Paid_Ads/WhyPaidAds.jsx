@@ -16,7 +16,7 @@ const WhyPaidAds = ({ paidadsData }) => {
                     src={item?.whyPaidAdsImage}
                     width={500}
                     height={500}
-                    alt="Image"
+                    alt={item?.whyPaidAds || "Why paid ads image"}
                     className="rounded-xl"
                   />
                 </div>

@@ -14,7 +14,7 @@ const DrivingB2BGrowth = ({ paidadsData }) => {
                   src={item?.drivingImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                  alt={item?.headline || "Driving B2B Growth image"}
                   className="rounded-xl"
                 />
               </div>

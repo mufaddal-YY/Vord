@@ -15,7 +15,7 @@ const ContentType = ({ contentData }) => {
                   src={item?.contentTypeImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                alt={item?.contentTypes || "Content types image"}
                   className="rounded-xl"
                 />
               </div>

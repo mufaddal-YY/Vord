@@ -21,7 +21,7 @@ const WhySeo = ({ seoData }) => {
               <div className="relative w-full h-[300px] overflow-hidden rounded-lg py-2">
                 <Image
                   src={item?.whySeoImage}
-                  alt={"Why Seo"}
+                  alt={item?.headline || "Why SEO image"}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center-top"

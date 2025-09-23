@@ -14,7 +14,7 @@ const WhyContent = ({ contentData }) => {
                   src={item?.whyImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                alt={item?.headline || "Why content image"}
                   className="rounded-xl"
                 />
               </div>

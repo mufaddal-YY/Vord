@@ -21,7 +21,7 @@ const WhyLinkedin = ({ linkedinData }) => {
                   src={item?.whyImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                  alt={item?.whyLinkedin || "Why LinkedIn image"}
                   className="rounded-xl"
                 />
               </div>

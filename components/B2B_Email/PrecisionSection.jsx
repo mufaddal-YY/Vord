@@ -23,7 +23,7 @@ const PrecisionSection = ({ emailData }) => {
                   src={item?.headImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                alt={item?.headline || "Email precision image"}
                   className="rounded-xl"
                 />
               </div>

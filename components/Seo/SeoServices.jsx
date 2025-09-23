@@ -23,7 +23,7 @@ const SeoServices = ({ seoData }) => {
                     src={item?.serviceImage}
                     width={600}
                     height={600}
-                    alt="Image"
+                    alt={item?.serviceHeadline || "SEO service image"}
                     className="radius-lg"
                   />
                 </div>
@@ -43,7 +43,7 @@ const SeoServices = ({ seoData }) => {
                             src={data?.image}
                             width={30}
                             height={30}
-                            alt={"Service Image"}
+                            alt={data?.serviceTitle || "Service icon"}
                           />
                         </div>
                         <h4 className="text-lg font-semibold pb-2 border-b border-gray-200">

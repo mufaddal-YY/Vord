@@ -15,7 +15,7 @@ const WhyEmail = ({ emailData }) => {
                   src={item?.whyEmailImage}
                   width={500}
                   height={500}
-                  alt="Image"
+                alt={item?.headline || "Why email image"}
                   className="rounded-xl"
                 />
               </div>

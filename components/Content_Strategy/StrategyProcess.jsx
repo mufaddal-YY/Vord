@@ -20,7 +20,7 @@ const StrategyProcess = ({ contentData }) => {
                     src={item?.contentConvertsImage}
                     width={600}
                     height={600}
-                    alt="Image"
+                  alt={item?.contentConverts || "Content converts image"}
                     className="rounded-xl"
                   />
                 </div>
@@ -41,7 +41,7 @@ const StrategyProcess = ({ contentData }) => {
                             src={data?.image}
                             width={30}
                             height={30}
-                            alt={"Service Image"}
+                            alt={data?.title || "Process icon"}
                           />
                         </div>
                         <h4 className="text-lg font-semibold pb-2 border-b border-gray-200">
