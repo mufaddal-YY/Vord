@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Logo from "@/public/logo_b.png";
 import { MdEmail, MdCall } from "react-icons/md";
 import {
@@ -10,8 +11,28 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { servicesData } from "@/lib/constants";
+import { getContactData } from "@/sanity/fetchedData";
 
 const Footer = () => {
+  const [contact, setContact] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    (async () => {
+      try {
+        const data = await getContactData();
+        if (isMounted) {
+          setContact(Array.isArray(data) && data.length > 0 ? data[0] : null);
+        }
+      } catch (error) {
+        console.error("Failed to load contact data", error);
+      }
+    })();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <section className="py-4 bg-white">
       <div className="container">
@@ -25,19 +46,24 @@ const Footer = () => {
             </div>
             <div className="py-2">
               <div className="flex flex-row justify-start gap-4">
-                <Link target="_blank" href={""} className="flex items-center">
+                <Link target="_blank" href={contact?.instagram || "#"} className="flex items-center">
                   <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
                     <FaInstagram />
                   </div>
                 </Link>
-                <Link target="_blank" href={""} className="flex items-center">
+                <Link target="_blank" href={contact?.linkedin || "#"} className="flex items-center">
                   <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
                     <FaLinkedin />
                   </div>
                 </Link>
-                <Link target="_blank" href={""} className="flex items-center">
+                <Link target="_blank" href={contact?.twitter || "#"} className="flex items-center">
                   <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
                     <FaTwitter />
+                  </div>
+                </Link>
+                <Link target="_blank" href={contact?.facebook || "#"} className="flex items-center">
+                  <div className="border-2 rounded-full p-2 hover:border-[#35750E] hover:text-[#35750E]">
+                    <FaFacebookF />
                   </div>
                 </Link>
               </div>
@@ -91,21 +117,21 @@ const Footer = () => {
             <div className="py-2">
               <ul className="flex flex-col gap-4 text-sm">
                 <li className="text-md capitalize">
-                  <Link href={`tel:+91-1234567890`} className="flex gap-2">
+                  <Link href={`tel:${contact?.contact || ""}`} className="flex gap-2">
                     <span className="text-xl text-primary">
                       <MdCall />
                     </span>
-                    Call us: +91-1234567890
+                    {contact?.contact ? `Call us: ${contact.contact}` : "Call us"}
                   </Link>
                 </li>
                 <li className="text-md">
                   <Link
-                    href={`mailto:arwa@vord.marketing`}
+                    href={`mailto:${contact?.email || ""}`}
                     className="flex gap-2">
                     <span className="text-xl text-primary">
                       <MdEmail />
                     </span>
-                    Email us: hello@vord.marketing
+                    {contact?.email ? `Email us: ${contact.email}` : "Email us"}
                   </Link>
                 </li>
               </ul>
