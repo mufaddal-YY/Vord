@@ -29,7 +29,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export const metadata = {};
 
 const BlogDetailPage = async ({ params }) => {
   const { slug } = params;
