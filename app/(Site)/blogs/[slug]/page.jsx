@@ -3,10 +3,33 @@ import Cta from "@/components/Common/Cta";
 import PageBanner from "@/components/Common/PageBanner";
 import { getBlogData, getBlogDetailData } from "@/sanity/fetchedData";
 
-export const metadata = {
-  title: "",
-  description: "",
-};
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blogDetail = await getBlogDetailData(slug);
+  const title = blogDetail?.metaTitle || blogDetail?.title || "Blog";
+  const description = blogDetail?.metaDescription || blogDetail?.excerpt || "";
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL || "https://vord.marketing"}/blogs/${slug}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url,
+      images: blogDetail?.mainImage ? [{ url: blogDetail.mainImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: blogDetail?.mainImage ? [blogDetail.mainImage] : undefined,
+    },
+  };
+}
+
+export const metadata = {};
 
 const BlogDetailPage = async ({ params }) => {
   const { slug } = await params; // Await params here

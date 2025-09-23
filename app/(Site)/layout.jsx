@@ -9,6 +9,42 @@ import Header from "@/components/Nav/Header";
 import Footer from "@/components/Nav/Footer";
 import ProgressBars from "@/components/Nav/ProgressBar";
 
+export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vord.marketing"),
+  title: {
+    default: "Vord Marketing",
+    template: "%s | Vord Marketing",
+  },
+  description:
+    "Vord is a B2B growth partner offering SEO, content, LinkedIn, email and paid acquisition to build your revenue engine.",
+  keywords: [
+    "B2B marketing",
+    "SEO",
+    "content marketing",
+    "LinkedIn marketing",
+    "email marketing",
+    "paid ads",
+  ],
+  authors: [{ name: "Vord Marketing" }],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Vord Marketing",
+    title: "Vord Marketing",
+    description:
+      "Vord is a B2B growth partner offering SEO, content, LinkedIn, email and paid acquisition to build your revenue engine.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vord Marketing",
+    description:
+      "Vord is a B2B growth partner offering SEO, content, LinkedIn, email and paid acquisition to build your revenue engine.",
+  },
+};
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
