@@ -25,13 +25,14 @@ export default async function About() {
 
       <main className="bg-white">
         <section className="container py-[50px]">
-          {aboutData.map((item) => (
-            <div className="flex flex-col justify-center items-center z-20">
+          {aboutData.map((item, idx) => (
+            <div className="flex flex-col justify-center items-center z-20" key={idx}>
               <Image
                 className="hover:animate-pulse"
                 src={item?.missionImage}
                 height={100}
                 width={100}
+                alt={item?.missionHeadline || "Mission image"}
               />
 
               <h2 className="py-4 text-3xl text-primaruy font-semibold">
@@ -48,13 +49,14 @@ export default async function About() {
       <Separator />
       <main className="bg-gray-50">
         <section className="container py-[50px]">
-          {aboutData.map((item) => (
-            <div className="flex flex-col justify-center items-center z-20">
+          {aboutData.map((item, idx) => (
+            <div className="flex flex-col justify-center items-center z-20" key={idx}>
               <Image
                 className="hover:animate-pulse"
                 src={item?.visionImage}
                 height={100}
                 width={100}
+                alt={item?.visionHeadline || "Vision image"}
               />
 
               <h2 className="py-4 text-3xl text-primaruy font-semibold">
