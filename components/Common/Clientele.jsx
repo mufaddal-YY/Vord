@@ -54,7 +54,7 @@ const Clientele = ({ clienteleData }) => {
                     alt={item?.alt}
                     width={200}
                     height={100}
-                    className=""
+                      className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300 ease-in-out"
                   />
                 </div>
               </div>
