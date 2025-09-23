@@ -4,7 +4,7 @@ import PageBanner from "@/components/Common/PageBanner";
 import { getBlogData, getBlogDetailData } from "@/sanity/fetchedData";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const blogDetail = await getBlogDetailData(slug);
   const title = blogDetail?.metaTitle || blogDetail?.title || "Blog";
   const description = blogDetail?.metaDescription || blogDetail?.excerpt || "";
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
 export const metadata = {};
 
 const BlogDetailPage = async ({ params }) => {
-  const { slug } = await params; // Await params here
+  const { slug } = params;
   const blogDetail = await getBlogDetailData(slug);
   const blogData = await getBlogData();
 
