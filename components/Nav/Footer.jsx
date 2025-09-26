@@ -135,6 +135,15 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
+              <div className="mt-4">
+                <a
+                  className="libutton"
+                  href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7265009579590107136"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Subscribe on LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
