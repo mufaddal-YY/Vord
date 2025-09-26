@@ -67,7 +67,12 @@ const myPortableTextComponents = {
       </ol>
     ),
     li: ({ children }) => (
-      <li className="text-gray-700 leading-relaxed">{children}</li>
+      <li className="special-list-item text-md flex lg:text-md list-none leading-snug py-2">
+        <span>
+          <FiCheckCircle className="mr-2 mt-1 text-md text-green-600" />{" "}
+        </span>
+        <span className="text-gray-700 leading-relaxed">{children}</span>
+      </li>
     ),
   },
 };
@@ -104,7 +109,12 @@ const PortableTextComponent = ({ content }) => {
             </ol>
           ),
           li: ({ children }) => (
-            <li className="text-gray-700 leading-relaxed">{children}</li>
+            <li className="special-list-item text-md flex lg:text-md list-none leading-snug py-2">
+              <span>
+                <FiCheckCircle className="mr-2 mt-1 text-md text-green-600" />{" "}
+              </span>
+              <span className="text-gray-700 leading-relaxed">{children}</span>
+            </li>
           ),
           blockquote: ({ children }) => (
             <blockquote className="border-l-4 border-primary pl-4 py-2 my-4 italic text-gray-600 bg-gray-50">
