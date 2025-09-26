@@ -50,7 +50,7 @@ export default async function Home() {
         ctaSecondaryButton={"See Our Process"}
         ctaSecondarylink={"#"}
       />
-      <Insights homeData={homeData} blogData={blogData} />
+      <Insights homeData={homeData} blogData={blogData.slice(0, 3)} />
       <PoweredBySection homeData={homeData} />
       <WhyVord homeData={homeData} />
       <MarketingPerformance
