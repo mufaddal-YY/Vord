@@ -15,7 +15,7 @@ const WhySeo = ({ seoData }) => {
                 {item?.whySeo}
               </h4>
               <Separator className="my-4" />
-              <div className="w-full text-white py-4">
+              <div className="w-full py-4 [&_p]:!text-white [&_h1]:!text-white [&_h2]:!text-white [&_h3]:!text-white [&_h4]:!text-white [&_h5]:!text-white [&_h6]:!text-white [&_li]:!text-white [&_span]:!text-white">
                 <PortableTextComponent content={item?.content} />
               </div>
               <div className="relative w-full h-[300px] overflow-hidden rounded-lg py-2">
