@@ -5,7 +5,7 @@ import Link from "next/link";
 const CaseCard = ({ mainImage, title, slug, excerpt }) => {
   return (
     <div className="rounded-xl shadow border-2 border-gray-200 shadow-custom">
-      <Link className="cursor-pointer" href={`/case-studies/${slug}`}>
+      <Link className="cursor-pointer" href={`/case-studies/${slug}`} target="_blank" rel="noopener noreferrer">
         <Image
           src={mainImage}
           alt={title}
@@ -16,11 +16,11 @@ const CaseCard = ({ mainImage, title, slug, excerpt }) => {
       </Link>
 
       <div className="p-4">
-        <Link className="cursor-pointer" href={`/case-studies/${slug}`}>
+        <Link className="cursor-pointer" href={`/case-studies/${slug}`} target="_blank" rel="noopener noreferrer">
           <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
         </Link>
         <p className="text-gray-500 mt-2 text-sm">{excerpt}</p>
-        <Link href={`/case-studies/${slug}`}>
+        <Link href={`/case-studies/${slug}`} target="_blank" rel="noopener noreferrer">
           <button className="mt-4 cursor-pointer text-primary font-medium flex items-center gap-1">
             Read more <ArrowRight className="w-4 h-4" />
           </button>

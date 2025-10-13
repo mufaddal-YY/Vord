@@ -23,7 +23,7 @@ const Insights = ({ homeData, blogData }) => {
                       key={i}
                       className="p-1 bg-white rounded-xl shadow-[0px_0px_10px_1px_#edf2f7] text-center lg:text-left flex flex-col justify-between h-full">
                       <div className="relative w-full h-[250px] overflow-hidden rounded-t-xl">
-                        <Link href={`/blogs/${data?.slug}`}>
+                        <Link href={`/blogs/${data?.slug}`} target="_blank" rel="noopener noreferrer">
                           <Image
                             src={data?.mainImage}
                             alt={data?.title}
@@ -34,7 +34,7 @@ const Insights = ({ homeData, blogData }) => {
                         </Link>
                       </div>
                       <div className="p-2">
-                        <Link href={`/blogs/${data?.slug}`}>
+                        <Link href={`/blogs/${data?.slug}`} target="_blank" rel="noopener noreferrer">
                           <h4 className="text-md font-medium pb-2">
                             {data?.title}
                           </h4>
