@@ -12,16 +12,18 @@ import {
 import EnquiryForm from "../Common/EnquiryForm";
 const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
   return (
-    <main className="w-full bg-white relative items-center justify-center bg-[url('/heroBg.png')] bg-no-repeat bg-[length:auto_25%] bg-[position:center_15%] lg:bg-center lg:bg-[length:35%]">
+    <main 
+      className="w-full bg-white relative items-center justify-center bg-[url('/heroBg.png')] bg-no-repeat bg-[length:auto_25%] bg-[position:center_15%] lg:bg-center lg:bg-[length:35%]"
+      aria-label="B2B SaaS Marketing Agency">
       <section className="container mx-auto py-[80px]">
         <div className="flex justify-center relative z-10">
           {homeData?.map((item, i) => (
             <div
               className="w-full md:max-w-5xl lg:max-w-5xl flex flex-col items-center justify-center"
               key={i}>
-              <h2 className="font-display text-primary text-center text-4xl font-bold tracking-[-0.01em] drop-shadow-sm md:text-5xl lg:text-5xl leading-snug lg:leading-[4rem]">
+              <h1 className="font-display text-primary text-center text-4xl font-bold tracking-[-0.01em] drop-shadow-sm md:text-5xl lg:text-5xl leading-snug lg:leading-[4rem]">
                 {item?.headline}
-              </h2>
+              </h1>
 
               <p className="lg:w-3/4 text-center leading-snug my-4 text-gray-700 text-md md:text-lg lg:text-xl">
                 {item?.subHeadline}
