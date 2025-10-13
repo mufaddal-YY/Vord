@@ -21,19 +21,12 @@ const HeroBanner = ({ homeData, clienteleData, testimonialsData }) => {
             <div
               className="w-full md:max-w-5xl lg:max-w-5xl flex flex-col items-center justify-center"
               key={i}>
-              <h1 className="font-display text-primary text-center text-4xl font-bold tracking-[-0.01em] drop-shadow-sm md:text-5xl lg:text-5xl leading-snug lg:leading-[4rem]">
-                {item?.headline?.split('agency').map((part, index, array) => (
-                  <span key={index}>
-                    {part}
-                    {index < array.length - 1 && (
-                      <>
-                        agency
-                        <br />
-                      </>
-                    )}
-                  </span>
-                ))}
-              </h1>
+              <h1 
+                className="font-display text-primary text-center text-4xl font-bold tracking-[-0.01em] drop-shadow-sm md:text-5xl lg:text-5xl leading-snug lg:leading-[4rem]"
+                dangerouslySetInnerHTML={{ 
+                  __html: item?.headline?.replace(/agency/i, 'agency<br />') || '' 
+                }}
+              />
 
               <p className="lg:w-3/4 text-center leading-snug my-4 text-gray-700 text-md md:text-lg lg:text-xl">
                 {item?.subHeadline}
