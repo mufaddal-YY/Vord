@@ -3,6 +3,13 @@
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import EnquiryForm from "../Common/EnquiryForm";
 
 const CustomRevenueEngine = ({ homeData }) => {
   return (
@@ -75,7 +82,19 @@ const CustomRevenueEngine = ({ homeData }) => {
               </div>
             </div>
             <div className="py-4 flex justify-center">
-              <Button>Schedule Your Revenue Strategy Session</Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button>Schedule Your Revenue Strategy Session</Button>
+                </DialogTrigger>
+                <DialogContent className="max-h-[600px] overflow-y-scroll">
+                  <DialogTitle>
+                    <h4 className="text-3xl font-bold py-2 mb-4 text-left text-primary">
+                      Enquire Now
+                    </h4>
+                  </DialogTitle>
+                  <EnquiryForm />
+                </DialogContent>
+              </Dialog>
             </div>
           </article>
         ))}
