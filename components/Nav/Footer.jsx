@@ -79,7 +79,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-4 text-sm">
                 {servicesData.map((item) => (
                   <li className="text-md capitalize" key={item?.name}>
-                    <Link href={`/${item?.link}`}>{item?.name}</Link>
+                    <Link href={`/services/${item?.link}`}>{item?.name}</Link>
                   </li>
                 ))}
               </ul>
