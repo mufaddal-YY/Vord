@@ -8,7 +8,7 @@ const RevenueEngine = ({ homeData }) => {
         {homeData.map((item, idx) => (
           <article className="bg-white rounded-[25px] p-6" key={idx}>
             <div className="border-b-2 text-center space-y-2 p-2">
-              <h4 className="text-3xl text-primary font-semibold">
+              <h4 className="text-3xl lg:text-4xl text-primary font-semibold">
                 {item.problemSubHeadline}:
               </h4>
               {/* <h6 className="text-lg font-medium">{item.problemSubHeadline}</h6> */}
@@ -32,6 +32,11 @@ const RevenueEngine = ({ homeData }) => {
               <h6 className="text-lg w-full lg:w-3/4 flex mx-auto items-center font-medium">
                 {item.revenueSubHeadline}
               </h6>
+              <p className="text-md w-full lg:w-3/4 mx-auto text-gray-700 leading-relaxed pt-4">
+                Many B2B SaaS and technology companies struggle to generate consistent
+                revenue despite investing in multiple marketing channels. Here are some common challenges
+                we solve through LinkedIn marketing, B2B SEO, and content strategy:
+              </p>
             </div>
             <div className="p-3">
               {item.revenueEngineMethodology.map((data, i) => (
