@@ -3,6 +3,12 @@ import Cta from "@/components/Common/Cta";
 import PageBanner from "@/components/Common/PageBanner";
 import { getCaseStudiesData } from "@/sanity/fetchedData";
 
+export const metadata = {
+  title: "Case Studies | Vord Marketing",
+  description: "Success stories and results from our B2B SaaS marketing campaigns, showcasing ROI and growth achievements.",
+  keywords: ["B2B case studies", "SaaS marketing results", "marketing success stories"],
+};
+
 const CaseStudies = async () => {
   const caseData = await getCaseStudiesData();
   return (

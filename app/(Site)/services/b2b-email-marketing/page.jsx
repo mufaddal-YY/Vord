@@ -7,6 +7,17 @@ import Cta from "@/components/Common/Cta";
 import PageBanner from "@/components/Common/PageBanner";
 import { getEmailData } from "@/sanity/fetchedData";
 
+export async function generateMetadata() {
+  const emailData = await getEmailData();
+  const data = emailData?.[0];
+  
+  return {
+    title: data?.metaTitle || "B2B Email Marketing Services",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
+
 export default async function B2BEmailMarketing() {
   const emailData = await getEmailData();
   return (

@@ -6,6 +6,17 @@ import VordAdvantage from "@/components/Seo/VordAdvantage";
 import WhySeo from "@/components/Seo/WhySeo";
 import { getSeoData } from "@/sanity/fetchedData";
 
+export async function generateMetadata() {
+  const seoData = await getSeoData();
+  const data = seoData?.[0];
+  
+  return {
+    title: data?.metaTitle || "SEO Services",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
+
 export default async function SearchEngineOptimization() {
   const seoData = await getSeoData();
   return (

@@ -6,6 +6,17 @@ import PaidAdAdvantage from "@/components/Paid_Ads/PaidAdAdvantage";
 import WhyPaidAds from "@/components/Paid_Ads/WhyPaidAds";
 import { getPaidAds } from "@/sanity/fetchedData";
 
+export async function generateMetadata() {
+  const paidadsData = await getPaidAds();
+  const data = paidadsData?.[0];
+  
+  return {
+    title: data?.metaTitle || "Paid Ads Management",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
+
 export default async function PaidAds() {
   const paidadsData = await getPaidAds();
   return (

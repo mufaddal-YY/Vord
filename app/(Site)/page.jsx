@@ -17,10 +17,16 @@ import {
   getTestimonials,
 } from "@/sanity/fetchedData";
 
-export const metadata = {
-  title: "Vord Marketing",
-  description: "",
-};
+export async function generateMetadata() {
+  const homeData = await getHomeData();
+  const data = homeData?.[0];
+  
+  return {
+    title: data?.metaTitle || "Vord Marketing",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
 
 export default async function Home() {
   const homeData = await getHomeData();

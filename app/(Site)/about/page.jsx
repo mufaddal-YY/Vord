@@ -12,6 +12,17 @@ import {
 } from "@/sanity/fetchedData";
 import Image from "next/image";
 
+export async function generateMetadata() {
+  const aboutData = await getAboutData();
+  const data = aboutData?.[0];
+  
+  return {
+    title: data?.metaTitle || "About Us",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
+
 export default async function About() {
   const homeData = await getHomeData();
   const aboutData = await getAboutData();

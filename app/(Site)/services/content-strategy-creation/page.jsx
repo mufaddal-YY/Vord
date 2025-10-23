@@ -7,6 +7,17 @@ import WhyContent from "@/components/Content_Strategy/WhyContent";
 import WhyPartner from "@/components/Content_Strategy/WhyPartner";
 import { getContentData } from "@/sanity/fetchedData";
 
+export async function generateMetadata() {
+  const contentData = await getContentData();
+  const data = contentData?.[0];
+  
+  return {
+    title: data?.metaTitle || "Content Strategy & Creation",
+    description: data?.metaDescription || "",
+    keywords: data?.metaKeywords || [],
+  };
+}
+
 export default async function ContentStrategy() {
   const contentData = await getContentData();
   return (

@@ -3,6 +3,12 @@ import Cta from "@/components/Common/Cta";
 import PageBanner from "@/components/Common/PageBanner";
 import { getBlogData } from "@/sanity/fetchedData";
 
+export const metadata = {
+  title: "Blogs | Vord Marketing",
+  description: "Insights and strategies for B2B SaaS marketing, growth marketing, LinkedIn optimization, SEO, and content marketing.",
+  keywords: ["B2B marketing blog", "SaaS marketing", "growth marketing", "LinkedIn marketing", "SEO"],
+};
+
 const BlogPage = async () => {
   const blogData = await getBlogData();
   return (
