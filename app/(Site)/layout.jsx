@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import Header from "@/components/Nav/Header";
 import Footer from "@/components/Nav/Footer";
 import ProgressBars from "@/components/Nav/ProgressBar";
+import ReCaptchaProvider from "@/components/Common/GoogleReCaptchaProvider";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vord.marketing"),
@@ -193,15 +194,17 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-MH1P5WPGY6');
           `}
         </Script>
-        <Header />
-        <main className="mt-12">
-          {children}
-          <Toaster closeButton position="top-right" richColors />
-        </main>
-        <Footer />
-        <Suspense>
-          <ProgressBars />
-        </Suspense>
+        <ReCaptchaProvider>
+          <Header />
+          <main className="mt-12">
+            {children}
+            <Toaster closeButton position="top-right" richColors />
+          </main>
+          <Footer />
+          <Suspense>
+            <ProgressBars />
+          </Suspense>
+        </ReCaptchaProvider>
       </body>
     </html>
   );

@@ -11,11 +11,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Textarea } from "../ui/textarea";
 import { sendEmail } from "@/lib/resend";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export const EnquirySchema = z.object({
   firstName: z.string().min(3).max(30),
@@ -23,18 +23,12 @@ export const EnquirySchema = z.object({
   email: z.string().email(),
   phone: z.string().min(3).max(30),
   message: z.string(),
+  recaptchaToken: z.string().optional(),
 });
 
 const EnquiryForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    resolver: zodResolver(EnquirySchema),
-  });
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm({
     resolver: zodResolver(EnquirySchema),
@@ -44,23 +38,47 @@ const EnquiryForm = () => {
       email: "",
       phone: "",
       message:"",
+      recaptchaToken: "",
     },
   });
 
   const onSubmit = async (formData) => {
     setIsLoading(true);
     try {
-      await sendEmail(formData);
-      toast.success("Email Sent Successfully!");
-      form.reset();
+      // Execute reCAPTCHA to get token
+      let recaptchaToken = "";
+      if (executeRecaptcha) {
+        try {
+          recaptchaToken = await executeRecaptcha("enquiry_form_submit");
+        } catch (recaptchaError) {
+          console.error("reCAPTCHA execution error:", recaptchaError);
+          toast.error("reCAPTCHA verification failed. Please try again.");
+          setIsLoading(false);
+          return;
+        }
+      }
+
+      // Include token in form data
+      const formDataWithToken = {
+        ...formData,
+        recaptchaToken,
+      };
+
+      const result = await sendEmail(formDataWithToken);
+      
+      if (result.success) {
+        toast.success("Email Sent Successfully!");
+        form.reset();
+      } else {
+        toast.error(result.error || "Failed to send email.");
+      }
     } catch (error) {
-      toast.error("Failed to send email.");
+      console.error("Form submission error:", error);
+      toast.error("Failed to send email. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
-
-  console.log(sendEmail)
 
   return (
     <main className="bg-transparent p-3">
