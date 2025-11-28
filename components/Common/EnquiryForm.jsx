@@ -28,7 +28,11 @@ export const EnquirySchema = z.object({
 
 const EnquiryForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  
+  // Get reCAPTCHA hook - executeRecaptcha will be undefined if script fails to load
+  // The hook should handle errors gracefully, but we'll check for availability
+  const recaptchaHook = useGoogleReCaptcha();
+  const executeRecaptcha = recaptchaHook?.executeRecaptcha;
 
   const form = useForm({
     resolver: zodResolver(EnquirySchema),
@@ -52,13 +56,14 @@ const EnquiryForm = () => {
           recaptchaToken = await executeRecaptcha("enquiry_form_submit");
         } catch (recaptchaError) {
           console.error("reCAPTCHA execution error:", recaptchaError);
-          toast.error("reCAPTCHA verification failed. Please try again.");
-          setIsLoading(false);
-          return;
+          // Don't block submission if reCAPTCHA fails - let server handle it
+          // The server will check if reCAPTCHA is configured and handle accordingly
         }
+      } else {
+        console.warn("reCAPTCHA not available - proceeding without token");
       }
 
-      // Include token in form data
+      // Include token in form data (empty string if not available)
       const formDataWithToken = {
         ...formData,
         recaptchaToken,
