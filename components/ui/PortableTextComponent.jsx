@@ -10,7 +10,13 @@ const myPortableTextComponents = {
         (value && value.asset && value.asset.url) ||
         (value && urlFor(value)?.url());
       if (!src) return null;
-      return <img src={src} alt={value?.alt || "Image"} className="rounded-lg my-4 max-w-full h-auto" />;
+      return (
+        <img
+          src={src}
+          alt={value?.alt || "Image"}
+          className="rounded-lg my-4 max-w-full h-auto"
+        />
+      );
     },
     callToAction: ({ value, isInline }) =>
       isInline ? (
@@ -27,24 +33,60 @@ const myPortableTextComponents = {
         ? "noreferrer noopener"
         : undefined;
       return (
-        <a href={value.href} rel={rel} className="text-primary hover:underline">
+        <a
+          href={value.href}
+          rel={rel}
+          className="blog-link !text-black !underline !font-semibold"
+          style={{
+            color: "#000000",
+            textDecoration: "underline",
+            fontWeight: 600,
+          }}>
           {children}
         </a>
       );
     },
     strong: ({ children }) => <strong>{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
-    code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">{children}</code>,
+    code: ({ children }) => (
+      <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">
+        {children}
+      </code>
+    ),
     underline: ({ children }) => <span className="underline">{children}</span>,
-    strikethrough: ({ children }) => <span className="line-through">{children}</span>,
+    strikethrough: ({ children }) => (
+      <span className="line-through">{children}</span>
+    ),
   },
   block: {
-    h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-gray-900">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-xl font-semibold mt-5 mb-2 text-gray-900">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-lg font-semibold mt-4 mb-2 text-gray-900">{children}</h4>,
-    h5: ({ children }) => <h5 className="text-base font-semibold mt-3 mb-2 text-gray-900">{children}</h5>,
-    h6: ({ children }) => <h6 className="text-sm font-semibold mt-3 mb-2 text-gray-900">{children}</h6>,
+    h1: ({ children }) => (
+      <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900">{children}</h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-2xl font-semibold mt-6 mb-3 text-gray-900">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-xl font-semibold mt-5 mb-2 text-gray-900">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-lg font-semibold mt-4 mb-2 text-gray-900">
+        {children}
+      </h4>
+    ),
+    h5: ({ children }) => (
+      <h5 className="text-base font-semibold mt-3 mb-2 text-gray-900">
+        {children}
+      </h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="text-sm font-semibold mt-3 mb-2 text-gray-900">
+        {children}
+      </h6>
+    ),
     normal: ({ children }) => {
       if (children.length === 1 && children[0] === "") {
         return <br />;
@@ -86,17 +128,49 @@ const PortableTextComponent = ({ content }) => {
         projectId={projectId}
         dataset={dataset}
         serializers={{
-          h1: (props) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900" {...props} />,
-          h2: (props) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-gray-900" {...props} />,
-          h3: (props) => <h3 className="text-xl font-semibold mt-5 mb-2 text-gray-900" {...props} />,
-          h4: (props) => <h4 className="text-lg font-semibold mt-4 mb-2 text-gray-900" {...props} />,
-          h5: (props) => <h5 className="text-base font-semibold mt-3 mb-2 text-gray-900" {...props} />,
-          h6: (props) => <h6 className="text-sm font-semibold mt-3 mb-2 text-gray-900" {...props} />,
+          h1: (props) => (
+            <h1
+              className="text-3xl font-bold mt-8 mb-4 text-gray-900"
+              {...props}
+            />
+          ),
+          h2: (props) => (
+            <h2
+              className="text-2xl font-semibold mt-6 mb-3 text-gray-900"
+              {...props}
+            />
+          ),
+          h3: (props) => (
+            <h3
+              className="text-xl font-semibold mt-5 mb-2 text-gray-900"
+              {...props}
+            />
+          ),
+          h4: (props) => (
+            <h4
+              className="text-lg font-semibold mt-4 mb-2 text-gray-900"
+              {...props}
+            />
+          ),
+          h5: (props) => (
+            <h5
+              className="text-base font-semibold mt-3 mb-2 text-gray-900"
+              {...props}
+            />
+          ),
+          h6: (props) => (
+            <h6
+              className="text-sm font-semibold mt-3 mb-2 text-gray-900"
+              {...props}
+            />
+          ),
           normal: ({ children }) => {
             if (children.length === 1 && children[0] === "") {
               return <br />;
             }
-            return <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>;
+            return (
+              <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>
+            );
           },
           ul: ({ children }) => (
             <ul className="list-disc list-inside mb-4 space-y-1 text-gray-700">

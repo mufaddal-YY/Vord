@@ -6,11 +6,12 @@ import Image from "next/image";
 const Testimonials = ({ testimonialsData }) => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
+    autoplaySpeed: 6000,
     loop: true,
 
     responsive: [

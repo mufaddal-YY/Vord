@@ -9,14 +9,13 @@ const BlogDetailSection = ({ blogData, blogDetail }) => {
       <section className=" container py-8 ">
         <article className="flex flex-col lg:flex-row gap-4">
           {/* Main Blog Content */}
-          <article className="w-full lg:w-2/3">
+          <article className="w-full lg:w-3/4">
             {/* Blog Main Image */}
-            <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-6">
-              <Image
+            <div className="w-full rounded-xl overflow-hidden mb-6">
+              <img
                 src={blogDetail?.mainImage}
                 alt={blogDetail?.title}
-                fill
-                className="object-cover"
+                className="w-full h-auto rounded-xl"
               />
             </div>
 
@@ -40,32 +39,23 @@ const BlogDetailSection = ({ blogData, blogDetail }) => {
           </article>
 
           {/* Sidebar */}
-          <aside className="w-full lg:w-1/3 ">
+          <aside className="w-full lg:w-1/4 ">
             <div className="flex flex-col gap-4 sticky-enquiry-form">
               {blogData.slice(0, 3).map((blog) => (
                 <div
                   key={blog._id}
-                  className="flex gap-4 rounded-2xl border-2 border-gray-100">
-                  <Image
-                    src={blog.mainImage}
-                    alt={blog.title}
-                    width={150}
-                    height={150}
-                    className="rounded-xl bg-primary object-cover w-[150px] h-[150px] transform transition-transform duration-500 ease-in-out hover:scale-105"
-                  />
-                  <div className="flex flex-col justify-between gap-4 h-[100px] p-4">
-                    <Link target="_blank" href={`/blogs/${blog?.slug}`}>
-                      <h4 className="text-sm font-regular text-gray-800 cursor-pointer lg:pt-2">
-                        {blog.title}
-                      </h4>
-                    </Link>
+                  className="flex flex-col gap-4 rounded-2xl border-2 border-gray-100 p-4">
+                  <Link target="_blank" href={`/blogs/${blog?.slug}`}>
+                    <h4 className="text-sm font-regular text-gray-800 cursor-pointer">
+                      {blog.title}
+                    </h4>
+                  </Link>
 
-                    <Link target="_blank" href={`/blogs/${blog?.slug}`}>
-                      <button className="text-primary text-md pb-2 font-medium cursor-pointer flex items-center gap-1">
-                        Read more <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </Link>
-                  </div>
+                  <Link target="_blank" href={`/blogs/${blog?.slug}`}>
+                    <button className="text-primary text-md font-medium cursor-pointer flex items-center gap-1">
+                      Read more <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
               ))}
             </div>

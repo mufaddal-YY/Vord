@@ -6,11 +6,12 @@ import { Button } from "../ui/button";
 const MarketingPerformance = ({ homeData, testimonialsData }) => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
+    autoplaySpeed: 6000,
     loop: true,
     vertical: true,
     verticalSwiping: true,

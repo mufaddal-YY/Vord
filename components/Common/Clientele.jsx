@@ -63,9 +63,8 @@ const Clientele = ({ clienteleData }) => {
         </div>
 
         <div className="text-center">
-          <h4 className="font-semibold">
-            Trusted by <span className="text-primary">forward-thinking</span>{" "}
-            B2B companies
+          <h4 className="">
+            Trusted by <span className="font-semibold text-primary">Leading B2B Companies</span>{" "}
           </h4>
         </div>
       </section>

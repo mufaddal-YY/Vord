@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
               "LinkedIn Lead Generation",
               "LinkedIn Ads Agency"
             ],
-            "url": "https://www.vord.marketing/services/linkedin-marketing",
+            "url": "https://www.vord.marketing/services/linkedin-marketing-agency",
             "description": "Specialized LinkedIn marketing services for B2B SaaS and technology companies, including profile optimization, LinkedIn ads management, and lead generation strategies tailored to founders, VPs, and marketing heads."
           }
         },
