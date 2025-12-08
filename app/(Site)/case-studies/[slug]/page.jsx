@@ -4,7 +4,7 @@ import PageBanner from "@/components/Common/PageBanner";
 import { getCaseStudiesData, getCaseStudiesDetailData } from "@/sanity/fetchedData";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const caseDetail = await getCaseStudiesDetailData(slug);
   const title = caseDetail?.metaTitle || caseDetail?.title || "Case Study";
   const description = caseDetail?.metaDescription || caseDetail?.excerpt || "";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
 
 
 const CaseStudiesDetailPage = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const caseDetail = await getCaseStudiesDetailData(slug);
   const caseData = await getCaseStudiesData();
 
