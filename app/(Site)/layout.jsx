@@ -180,6 +180,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <script src="https://t.contentsquare.net/uxa/bcd6b0d308d82.js"></script>
       </head>
       <body className={`${inter.className} antialiased`}>
         <Script
