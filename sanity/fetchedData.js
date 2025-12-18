@@ -457,3 +457,72 @@ export async function getContactData() {
   );
   return result;
 }
+
+export async function getWebsiteConsultationData() {
+  const result = await client.fetch(
+    groq`*[_type == "websiteConsultation"]{
+         _id,
+         _createdAt,
+         metaTitle,
+         metaDescription,
+         metaKeywords,
+         headline,
+         introHeadline,
+         introDescription,
+         introButtonText,
+         "introImage": introImage.asset->url,
+         whyNotConvertingHeadline,
+         whyNotConvertingDescription,
+         "whyNotConvertingImage": whyNotConvertingImage.asset->url,
+         processHeadline,
+         processDescription,
+         processSteps[]{
+           title,
+           description,
+           "image": image.asset->url,
+         },
+         processDeliverable,
+         frameworkHeadline,
+         frameworkDescription,
+         frameworkSteps[]{
+           step,
+           title,
+           description,
+         },
+         whoIsThisForHeadline,
+         targetAudience[]{
+           title,
+           description,
+           "image": image.asset->url,
+         },
+         "whoIsThisForImage": whoIsThisForImage.asset->url,
+         resultsHeadline,
+         resultsDescription,
+         results[]{
+           stat,
+           label,
+           description,
+         },
+         whatYouGetHeadline,
+         deliverables[]{
+           title,
+           description,
+         },
+         "whatYouGetImage": whatYouGetImage.asset->url,
+         faqHeadline,
+         faqs[]{
+           question,
+           answer,
+         },
+         ctaTitle,
+         ctaDescription,
+         ctaPrimaryButton,
+         ctalink,
+         ctaSecondaryButton,
+         ctaSecondarylink,
+        }`,
+    {},
+    defaultFetchOptions
+  );
+  return result;
+}
