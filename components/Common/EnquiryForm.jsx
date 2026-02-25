@@ -70,9 +70,19 @@ const EnquiryForm = () => {
       };
 
       const result = await sendEmail(formDataWithToken);
-      
+
       if (result.success) {
         toast.success("Email Sent Successfully!");
+
+        // Fire LinkedIn conversion tracking on successful enquiry submission
+        if (typeof window !== "undefined" && typeof window.lintrk === "function") {
+          try {
+            window.lintrk("track", { conversion_id: 26588121 });
+          } catch (trackingError) {
+            console.error("LinkedIn tracking error:", trackingError);
+          }
+        }
+
         form.reset();
       } else {
         toast.error(result.error || "Failed to send email.");
