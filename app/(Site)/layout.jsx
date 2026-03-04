@@ -176,6 +176,7 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="NtGKpsfhzlgUHFWDi2B8FBRrfAWqrhTe7G5Fh1PfLFU"
         />
+        <script src="https://t.contentsquare.net/uxa/bcd6b0d308d82.js"></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
