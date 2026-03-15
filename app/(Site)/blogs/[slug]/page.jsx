@@ -40,6 +40,7 @@ const BlogDetailPage = async ({ params }) => {
       <PageBanner
         headline={blogDetail?.title}
         subHeadline={blogDetail?.excerpt}
+        backgroundImage={blogDetail?.mainImage}
       />
       <BlogDetailSection blogData={blogData} blogDetail={blogDetail} />
       <Cta

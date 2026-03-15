@@ -10,15 +10,6 @@ const BlogDetailSection = ({ blogData, blogDetail }) => {
         <article className="flex flex-col lg:flex-row gap-4">
           {/* Main Blog Content */}
           <article className="w-full lg:w-3/4">
-            {/* Blog Main Image */}
-            <div className="w-full rounded-xl overflow-hidden mb-6">
-              <img
-                src={blogDetail?.mainImage}
-                alt={blogDetail?.title}
-                className="w-full h-auto rounded-xl"
-              />
-            </div>
-
             {/* Title & Meta */}
             <h1 className="text-2xl lg:text-3xl font-semibold mb-4">
               {blogDetail?.title}
