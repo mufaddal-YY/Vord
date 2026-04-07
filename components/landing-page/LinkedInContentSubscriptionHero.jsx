@@ -50,6 +50,7 @@ const LinkedInContentSubscriptionHero = () => {
             <span className="inline-flex w-fit self-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-white/75 sm:px-4 sm:py-2 sm:text-sm sm:tracking-[0.18em] md:self-start md:text-left">
               LINKEDIN CONTENT SUBSCRIPTION <br className="md:hidden lg:hidden"/> BUILT FOR B2B
             </span>
+            {/*  */}
             <h1 className="mt-5 max-w-3xl text-center text-4xl font-bold leading-[1.05] text-white md:text-left lg:text-6xl">
               Your <span className="text-[#00EAB4]">LinkedIn</span>. Always{" "}
               <span className="text-[#00EAB4]">Active</span>.
